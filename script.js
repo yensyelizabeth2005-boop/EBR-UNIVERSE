@@ -70,14 +70,7 @@ function saveCharacter() {
     if (name.trim() === "" || age.trim() === "") {
         alert("Please enter the character name and age.");
         return;
-    } function saveCharacter() {
-    const name = document.getElementById("characterName").value;
-    const age = document.getElementById("characterAge").value;
-
-    if (name.trim() === "" || age.trim() === "") {
-        alert("Please enter the character name and age.");
-        return;
-    }
+    } 
 
     document.body.innerHTML = `
         <h1>${name}</h1>
