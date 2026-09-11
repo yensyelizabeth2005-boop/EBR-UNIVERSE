@@ -76,18 +76,16 @@ function saveCharacter() {
     }
 
     document.body.innerHTML = `
-    <h1>${name}</h1>
+        <h1>${name}</h1>
+        <h2>${age} years old</h2>
 
-    <h2>${age} years old</h2>
+        <p>Character created successfully!</p>
 
-    <p>Character created successfully!</p>
+        <br>
 
-    <br>
-
-    <button onclick="openChat()">💬 CHAT</button>
-    <button>📱 PHONE</button>
-    <button>👤 PROFILE</button>
-    <button>📖 STORY</button>
-`;
+        <button>💬 CHAT</button>
+        <button>📱 PHONE</button>
+        <button>👤 PROFILE</button>
+        <button>📖 STORY</button>
     `;
 }
