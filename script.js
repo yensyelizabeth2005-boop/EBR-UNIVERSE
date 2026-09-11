@@ -4,7 +4,7 @@ function startGame() {
         <p>Welcome to your universe.</p>
 
         <button onclick="createUniverse()">CREATE UNIVERSE</button>
-        <button>MY STORIES</button>
+        <button onclick="openMyStories()">MY STORIES</button>
         <button>SETTINGS</button>
     `;
 }
