@@ -102,5 +102,33 @@ function openMyStories() {
         <p>No universes created yet.</p>
     `;
 }
+function openChat() {
+    document.body.innerHTML = `
+        <h1>CHAT</h1>
 
+        <div id="chatBox">
+            <p><strong>Character:</strong> Hello. Welcome to Eclipse.</p>
+        </div>
+
+        <br>
+
+        <input type="text" id="messageInput" placeholder="Write a message">
+
+        <button onclick="sendMessage()">SEND</button>
+    `;
+}
+
+function sendMessage() {
+    const input = document.getElementById("messageInput");
+    const message = input.value.trim();
+
+    if (message === "") {
+        return;
+    }
+
+    document.getElementById("chatBox").innerHTML +=
+        `<p><strong>You:</strong> ${message}</p>`;
+
+    input.value = "";
+}
    
