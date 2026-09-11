@@ -70,6 +70,13 @@ function saveCharacter() {
     if (name.trim() === "" || age.trim() === "") {
         alert("Please enter the character name and age.");
         return;
+    } function saveCharacter() {
+    const name = document.getElementById("characterName").value;
+    const age = document.getElementById("characterAge").value;
+
+    if (name.trim() === "" || age.trim() === "") {
+        alert("Please enter the character name and age.");
+        return;
     }
 
     document.body.innerHTML = `
@@ -84,8 +91,10 @@ function saveCharacter() {
         <button>📱 PHONE</button>
         <button>👤 PROFILE</button>
         <button onclick="openMyStories()">MY STORIES</button>
-        
-        function openMyStories() {
+    `;
+}
+
+function openMyStories() {
     document.body.innerHTML = `
         <h1>MY STORIES</h1>
 
@@ -96,8 +105,9 @@ function saveCharacter() {
         <br><br>
 
         <h2>MY UNIVERSES</h2>
+
         <p>No universes created yet.</p>
     `;
 }
-    `;
-}
+
+   
