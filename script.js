@@ -83,6 +83,6 @@ function saveCharacter() {
         <button onclick="openChat()">💬 CHAT</button>
         <button>📱 PHONE</button>
         <button>👤 PROFILE</button>
-        <button>📖 STORY</button>
+        <button onclick="openMyStories()">MY STORIES</button>
     `;
 }
