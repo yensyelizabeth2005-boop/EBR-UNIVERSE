@@ -84,5 +84,20 @@ function saveCharacter() {
         <button>📱 PHONE</button>
         <button>👤 PROFILE</button>
         <button onclick="openMyStories()">MY STORIES</button>
+        
+        function openMyStories() {
+    document.body.innerHTML = `
+        <h1>MY STORIES</h1>
+
+        <p>Create your own story and universe.</p>
+
+        <button onclick="createUniverse()">＋ CREATE NEW STORY</button>
+
+        <br><br>
+
+        <h2>MY UNIVERSES</h2>
+        <p>No universes created yet.</p>
+    `;
+}
     `;
 }
