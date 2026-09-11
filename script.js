@@ -82,7 +82,7 @@ function saveCharacter() {
 
         <button onclick="openChat()">💬 CHAT</button>
         <button>📱 PHONE</button>
-        <button onclick="openProfile()">👤 PROFILE</button>
+        <button onclick="alert('PROFILE WORKS!')">👤 PROFILE</button>
         <button onclick="openMyStories()">MY STORIES</button>
     `;
 }
