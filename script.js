@@ -80,7 +80,7 @@ function saveCharacter() {
 
         <br>
 
-        <button>💬 CHAT</button>
+        <button onclick="openChat()">💬 CHAT</button>
         <button>📱 PHONE</button>
         <button>👤 PROFILE</button>
         <button>📖 STORY</button>
