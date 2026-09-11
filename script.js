@@ -34,6 +34,63 @@ function saveUniverse() {
         <h1>${name}</h1>
         <p>Your universe has been created!</p>
 
-        <button>CREATE CHARACTER</button>
+        <button onclick="createCharacter()">CREATE CHARACTER</button>
+    `;
+}
+
+function createCharacter() {
+    document.body.innerHTML = `
+        <h1>Create Your Character</h1>
+
+        <p>Name</p>
+        <input type="text" id="characterName" placeholder="Character name">
+
+        <p>Age</p>
+        <input type="number" id="characterAge" placeholder="Age">
+
+        <p>Personality</p>
+        <textarea id="characterPersonality" placeholder="Character personality"></textarea>
+
+        <p>Appearance</p>
+        <textarea id="characterAppearance" placeholder="Character appearance"></textarea>
+
+        <p>Backstory</p>
+        <textarea id="characterBackstory" placeholder="Character backstory"></textarea>
+
+        <br><br>
+
+        <button onclick="saveCharacter()">CREATE CHARACTER</button>
+    `;
+}
+
+function saveCharacter() {
+    const name = document.getElementById("characterName").value;
+    const age = document.getElementById("characterAge").value;
+    const personality = document.getElementById("characterPersonality").value;
+    const appearance = document.getElementById("characterAppearance").value;
+    const backstory = document.getElementById("characterBackstory").value;
+
+    if (name.trim() === "" || age.trim() === "") {
+        alert("Please enter the character name and age.");
+        return;
+    }
+
+    document.body.innerHTML = `
+        <h1>${name}</h1>
+
+        <p>Age: ${age}</p>
+
+        <h2>Personality</h2>
+        <p>${personality}</p>
+
+        <h2>Appearance</h2>
+        <p>${appearance}</p>
+
+        <h2>Backstory</h2>
+        <p>${backstory}</p>
+
+        <br>
+
+        <p>Character created successfully!</p>
     `;
 }
