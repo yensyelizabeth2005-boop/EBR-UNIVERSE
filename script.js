@@ -125,8 +125,11 @@ function sendMessage() {
     if (message === "") {
         return;
     }
-    function sendMessage() {
-    // todo tu código de sendMessage...
+
+    document.getElementById("chatBox").innerHTML +=
+        `<p><strong>You:</strong> ${message}</p>`;
+
+    input.value = "";
 }
 
 function openProfile() {
@@ -142,11 +145,5 @@ function openProfile() {
 
         <button onclick="openChat()">💬 CHAT</button>
     `;
-}
-
-    document.getElementById("chatBox").innerHTML +=
-        `<p><strong>You:</strong> ${message}</p>`;
-
-    input.value = "";
 }
    
