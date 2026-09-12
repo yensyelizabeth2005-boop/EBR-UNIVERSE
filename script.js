@@ -152,3 +152,12 @@ function openPhone() {
     `;
 }
    
+function openMessages() {
+    document.body.innerHTML = `
+        <h1>💬 MESSAGES</h1>
+
+        <p>No messages yet.</p>
+
+        <button>＋ NEW MESSAGE</button>
+    `;
+}
