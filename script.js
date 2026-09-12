@@ -232,6 +232,21 @@ function openPhotos() {
     `;
 }
 
+function addPhoto() {
+    document.body.innerHTML = `
+        <h1>＋ ADD PHOTO</h1>
+
+        <p>Choose a photo</p>
+
+        <input type="file" accept="image/*" id="photoInput">
+
+        <br><br>
+
+        <button onclick="savePhoto()">ADD PHOTO</button>
+        <button onclick="openPhotos()">← BACK</button>
+    `;
+}
+
 function openNotifications() {
     document.body.innerHTML = `
         <h1>🔔 NOTIFICATIONS</h1>
