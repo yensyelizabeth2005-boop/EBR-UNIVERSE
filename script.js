@@ -232,8 +232,7 @@ function openPhotos() {
     `;
 }
 
-function addPhoto() 
-{ alert("ADD PHOTO WORKS!");  
+function addPhoto() {  
     document.body.innerHTML = `
         <h1>＋ ADD PHOTO</h1>
 
