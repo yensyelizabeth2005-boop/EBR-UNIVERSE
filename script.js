@@ -551,6 +551,7 @@ function publishReply() {
 
    function openSavedUniverse(index) {
     let universes = JSON.parse(localStorage.getItem("universes")) || [];
+    let characters = JSON.parse(localStorage.getItem("characters")) || [];
     let universe = universes[index];
 
     if (!universe) {
@@ -558,12 +559,32 @@ function publishReply() {
         return;
     }
 
+    let characterList = "";
+
+    if (characters.length === 0) {
+        characterList = "<p>No characters created yet.</p>";
+    } else {
+        characters.forEach((character) => {
+            characterList += `
+                <div>
+                    <h3>👤 ${character.name}</h3>
+                    <p>${character.age} years old</p>
+                </div>
+                <hr>
+            `;
+        });
+    }
+
     document.body.innerHTML = `
         <h1>🌌 ${universe.name}</h1>
 
         <p>Your universe is ready.</p>
 
-        <button onclick="createCharacter()">CREATE CHARACTER</button>
+        <h2>CHARACTERS</h2>
+
+        ${characterList}
+
+        <button onclick="createCharacter()">＋ CREATE CHARACTER</button>
 
         <br><br>
 
