@@ -273,9 +273,18 @@ function openNotifications() {
     document.body.innerHTML = `
         <h1>🔔 NOTIFICATIONS</h1>
 
-        <p>No notifications yet.</p>
+        <div id="notificationsList">
 
-        <button>← BACK</button>
+            <p>💬 <strong>Luna</strong> sent you a message.</p>
+
+            <p>❤️ <strong>Emma</strong> liked your post.</p>
+
+            <p>👥 <strong>Alex</strong> added you to a group chat.</p>
+
+        </div>
+
+        <br>
+
+        <button onclick="openPhone()">← BACK</button>
     `;
-    }
-
+}
