@@ -198,7 +198,11 @@ function sendMessage() {
     } else if (lowerMessage.includes("who are you")) {
         response = "I'm Luna. There's more to my story than I usually tell people.";
     } else if (lowerMessage.includes("eclipse")) {
-        response = "Eclipse has many secrets. Some of them are better left undiscovered... 🌌";
+        response = "Eclipse has many secrets. Some of them are better left undiscovered... 🌌"; 
+        } else if (lowerMessage.includes("secret")) {
+    response = "I've spent years searching for answers. I know there's something hidden here, and I'm not going to stop until I find it.";
+} else if (lowerMessage.includes("family")) {
+    response = "The families in this town know more than they admit. I don't trust them... but I need to understand their secrets.";
     } else {
         response = "That's interesting. Tell me more.";
     }
