@@ -187,6 +187,25 @@ function addContact() {
     `;
 }
 
+function saveContact() {
+    const name = document.getElementById("contactName").value.trim();
+
+    if (name === "") {
+        alert("Please enter a contact name.");
+        return;
+    }
+
+    document.body.innerHTML = `
+        <h1>👥 CONTACTS</h1>
+
+        <div id="contactsList">
+            <p>👤 ${name}</p>
+        </div>
+
+        <button onclick="addContact()">＋ ADD CONTACT</button>
+    `;
+}
+
 function openPhotos() {
     document.body.innerHTML = `
         <h1>📸 PHOTOS</h1>
