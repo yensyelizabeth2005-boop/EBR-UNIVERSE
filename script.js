@@ -357,7 +357,7 @@ function openSocialFeed() {
                 <h3>👤 You</h3>
                 <p>${text}</p>
                <button onclick="likePost(this)">❤️ 0 Likes</button>
-<p>💬 0 Comments</p>
+<button onclick="commentPost()">💬 0 Comments</button>
             </div>
 
             <hr>
@@ -396,4 +396,49 @@ function openSocialFeed() {
 
     button.dataset.likes = likes;
     button.innerHTML = `❤️ ${likes} Likes`;
+}
+function commentPost() {
+    document.body.innerHTML = `
+        <h1>💬 COMMENT</h1>
+
+        <p>Write your comment:</p>
+
+        <textarea id="commentText" placeholder="Write a comment..."></textarea>
+
+        <br><br>
+
+        <button onclick="publishComment()">POST COMMENT</button>
+        <button onclick="openSocialFeed()">← BACK</button>
+    `;
+}
+
+function publishComment() {
+    const text = document.getElementById("commentText").value.trim();
+
+    if (text === "") {
+        alert("Please write a comment.");
+        return;
+    }
+
+    document.body.innerHTML = `
+        <h1>🌐 SOCIAL FEED</h1>
+
+        <button onclick="createPost()">＋ CREATE POST</button>
+
+        <hr>
+
+        <div>
+            <h3>👤 You</h3>
+            <p>Your post</p>
+            <p>❤️ 0 Likes</p>
+
+            <div>
+                <p>💬 <strong>You:</strong> ${text}</p>
+            </div>
+        </div>
+
+        <br>
+
+        <button onclick="openPhone()">← BACK</button>
+    `;
 }
