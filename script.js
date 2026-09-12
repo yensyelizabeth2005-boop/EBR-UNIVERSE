@@ -174,24 +174,21 @@ function openContacts() {
     showContacts();
 }
 
-function addContact() {
-    document.body.innerHTML = `
-        <h1>＋ ADD CONTACT</h1>
+function saveContact() {
+    const name = document.getElementById("contactName").value.trim();
 
-        <p>Contact Name</p>
+    if (name === "") {
+        alert("Please enter a contact name.");
+        return;
+    }
 
-        <input type="text" id="contactName" placeholder="Enter contact name">
+    contacts.push(name);
 
-        <br><br>
-
-        <button onclick="saveContact()">ADD</button>
-    `;
+    openContacts();
 }
 
 function showContacts() {
     const contactsList = document.getElementById("contactsList");
-
-    let contacts = JSON.parse(localStorage.getItem("ebrContacts")) || [];
 
     if (contacts.length === 0) {
         contactsList.innerHTML = "<p>No contacts yet.</p>";
