@@ -150,6 +150,7 @@ function openPhone() {
        <button onclick="openContacts()">👥 CONTACTS</button>
         <button onclick="openPhotos()">📸 PHOTOS</button>
         <button onclick="openNotifications()">🔔 NOTIFICATIONS</button>
+        <button onclick="openSocialFeed()">🌐 SOCIAL FEED</button>
     `;
 }
    
@@ -281,6 +282,98 @@ function openNotifications() {
 
             <p>👥 <strong>Alex</strong> added you to a group chat.</p>
 
+        </div>
+
+        <br>
+
+        <button onclick="openPhone()">← BACK</button>
+    `;
+} 
+
+function openSocialFeed() {
+    document.body.innerHTML = `
+        <h1>🌐 SOCIAL FEED</h1>
+
+        <button onclick="createPost()">＋ CREATE POST</button>
+
+        <hr>
+
+        <div id="feed">
+
+            <div>
+                <h3>👤 Luna</h3>
+                <p>Had such a beautiful day today ✨</p>
+                <p>❤️ 12 Likes · 💬 3 Comments</p>
+            </div>
+
+            <hr>
+
+            <div>
+                <h3>👤 Emma</h3>
+                <p>New photo from tonight 📸</p>
+                <p>❤️ 24 Likes · 💬 5 Comments</p>
+            </div>
+
+        </div>
+
+        <br>
+
+        <button onclick="openPhone()">← BACK</button>
+    `;
+} 
+
+ function createPost() {
+    document.body.innerHTML = `
+        <h1>📝 CREATE POST</h1>
+
+        <p>What do you want to post?</p>
+
+        <textarea id="postText" placeholder="Write something..."></textarea>
+
+        <br><br>
+
+        <button onclick="publishPost()">PUBLISH</button>
+        <button onclick="openSocialFeed()">← BACK</button>
+    `;
+}
+
+ function publishPost() {
+    const text = document.getElementById("postText").value.trim();
+
+    if (text === "") {
+        alert("Please write something.");
+        return;
+    }
+
+    document.body.innerHTML = `
+        <h1>🌐 SOCIAL FEED</h1>
+
+        <button onclick="createPost()">＋ CREATE POST</button>
+
+        <hr>
+
+        <div id="feed">
+            <div>
+                <h3>👤 You</h3>
+                <p>${text}</p>
+                <p>❤️ 0 Likes · 💬 0 Comments</p>
+            </div>
+
+            <hr>
+
+            <div>
+                <h3>👤 Luna</h3>
+                <p>Had such a beautiful day today ✨</p>
+                <p>❤️ 12 Likes · 💬 3 Comments</p>
+            </div>
+
+            <hr>
+
+            <div>
+                <h3>👤 Emma</h3>
+                <p>New photo from tonight 📸</p>
+                <p>❤️ 24 Likes · 💬 5 Comments</p>
+            </div>
         </div>
 
         <br>
