@@ -567,7 +567,9 @@ function publishReply() {
         characters.forEach((character) => {
             characterList += `
                 <div>
-                    <h3>👤 ${character.name}</h3>
+                    <button onclick="openCharacter(${characters.indexOf(character)})">
+    👤 ${character.name} — ${character.age} years old
+</button>
                     <p>${character.age} years old</p>
                 </div>
                 <hr>
@@ -585,6 +587,41 @@ function publishReply() {
         ${characterList}
 
         <button onclick="createCharacter()">＋ CREATE CHARACTER</button>
+
+        <br><br>
+
+        <button onclick="openMyStories()">← MY STORIES</button>
+    `;
+}
+
+
+function openCharacter(index) {
+    let characters = JSON.parse(localStorage.getItem("characters")) || [];
+    let character = characters[index];
+
+    if (!character) {
+        alert("Character not found.");
+        return;
+    }
+
+    document.body.innerHTML = `
+        <h1>👤 ${character.name}</h1>
+
+        <h2>${character.age} years old</h2>
+
+        <h3>Personality</h3>
+        <p>${character.personality}</p>
+
+        <h3>Appearance</h3>
+        <p>${character.appearance}</p>
+
+        <h3>Backstory</h3>
+        <p>${character.backstory}</p>
+
+        <br>
+
+        <button onclick="openChat()">💬 CHAT</button>
+        <button onclick="openPhone()">📱 PHONE</button>
 
         <br><br>
 
