@@ -171,3 +171,12 @@ function openContacts() {
         <button>＋ ADD CONTACT</button>
     `;
 }
+
+function openPhotos() {
+    document.body.innerHTML = `
+        <h1>📸 PHOTOS</h1>
+        <p>No photos yet.</p>
+
+        <button>＋ ADD PHOTO</button>
+    `;
+}
