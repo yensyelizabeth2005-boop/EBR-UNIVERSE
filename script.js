@@ -99,6 +99,24 @@ function saveCharacter() {
 }
 
 function openMyStories() {
+    let universes = JSON.parse(localStorage.getItem("universes")) || [];
+
+    let universeList = "";
+
+    if (universes.length === 0) {
+        universeList = "<p>No universes created yet.</p>";
+    } else {
+        universes.forEach((universe, index) => {
+            universeList += `
+                <div>
+                    <h3>🌌 ${universe.name}</h3>
+                    <button onclick="openSavedUniverse(${index})">OPEN</button>
+                </div>
+                <hr>
+            `;
+        });
+    }
+
     document.body.innerHTML = `
         <h1>MY STORIES</h1>
 
@@ -110,7 +128,11 @@ function openMyStories() {
 
         <h2>MY UNIVERSES</h2>
 
-        <p>No universes created yet.</p>
+        ${universeList}
+
+        <br>
+
+        <button onclick="startGame()">← BACK</button>
     `;
 }
 function openChat() {
