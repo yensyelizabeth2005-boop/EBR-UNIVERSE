@@ -182,8 +182,13 @@ function sendMessage() {
         return;
     }
 
-    document.getElementById("chatBox").innerHTML +=
+    const chatBox = document.getElementById("chatBox");
+
+    chatBox.innerHTML +=
         `<p><strong>You:</strong> ${message}</p>`;
+
+    chatBox.innerHTML +=
+        `<p><strong>Luna:</strong> Hello! It's nice to hear from you. 🌙</p>`;
 
     input.value = "";
 }
