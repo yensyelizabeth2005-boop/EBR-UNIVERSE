@@ -246,6 +246,28 @@ function addPhoto() {
         <button onclick="openPhotos()">← BACK</button>
     `;
 }
+ function savePhoto() {
+    const input = document.getElementById("photoInput");
+
+    if (input.files.length === 0) {
+        alert("Please choose a photo.");
+        return;
+    }
+
+    const file = input.files[0];
+    const imageURL = URL.createObjectURL(file);
+
+    document.body.innerHTML = `
+        <h1>📸 PHOTOS</h1>
+
+        <img src="${imageURL}" width="250">
+
+        <br><br>
+
+        <button onclick="addPhoto()">＋ ADD PHOTO</button>
+        <button onclick="openPhone()">← BACK</button>
+    `;
+}
 
 function openNotifications() {
     document.body.innerHTML = `
