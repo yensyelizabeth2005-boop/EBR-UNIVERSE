@@ -356,7 +356,8 @@ function openSocialFeed() {
             <div>
                 <h3>👤 You</h3>
                 <p>${text}</p>
-                <p>❤️ 0 Likes · 💬 0 Comments</p>
+               <button onclick="likePost(this)">❤️ 0 Likes</button>
+<p>💬 0 Comments</p>
             </div>
 
             <hr>
@@ -380,4 +381,19 @@ function openSocialFeed() {
 
         <button onclick="openPhone()">← BACK</button>
     `;
+}
+
+   function likePost(button) {
+    let likes = parseInt(button.dataset.likes || "0");
+
+    if (button.dataset.liked === "true") {
+        likes--;
+        button.dataset.liked = "false";
+    } else {
+        likes++;
+        button.dataset.liked = "true";
+    }
+
+    button.dataset.likes = likes;
+    button.innerHTML = `❤️ ${likes} Likes`;
 }
