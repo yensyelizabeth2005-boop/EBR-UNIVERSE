@@ -27,9 +27,9 @@ function createUniverse() {
         <button onclick="saveUniverse()">CREATE</button>
     `;
 }
-
 function saveUniverse() {
     const name = document.getElementById("universeName").value.trim();
+    const description = document.getElementById("universeDescription").value.trim();
 
     if (name === "") {
         alert("Please enter a universe name.");
@@ -40,14 +40,17 @@ function saveUniverse() {
 
     universes.push({
         name: name,
+        description: description,
         createdAt: new Date().toISOString()
     });
 
     localStorage.setItem("universes", JSON.stringify(universes));
 
     document.body.innerHTML = `
-        <h1>${name}</h1>
-        <p>Your universe has been created and saved!</p>
+        <h1>🌌 ${name}</h1>
+        <p>${description}</p>
+
+        <p>Your universe is ready.</p>
 
         <button onclick="createCharacter()">CREATE CHARACTER</button>
         <button onclick="openMyStories()">MY STORIES</button>
