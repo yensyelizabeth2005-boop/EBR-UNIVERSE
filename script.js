@@ -161,3 +161,13 @@ function openMessages() {
         <button>＋ NEW MESSAGE</button>
     `;
 }
+
+function openContacts() {
+    document.body.innerHTML = `
+        <h1>👥 CONTACTS</h1>
+
+        <p>No contacts yet.</p>
+
+        <button>＋ ADD CONTACT</button>
+    `;
+}
