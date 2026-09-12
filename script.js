@@ -166,12 +166,12 @@ function openContacts() {
     document.body.innerHTML = `
         <h1>👥 CONTACTS</h1>
 
-        <div id="contactsList">
-            <p>No contacts yet.</p>
-        </div>
+        <div id="contactsList"></div>
 
         <button onclick="addContact()">＋ ADD CONTACT</button>
     `;
+
+    showContacts();
 }
 
 function addContact() {
@@ -179,6 +179,7 @@ function addContact() {
         <h1>＋ ADD CONTACT</h1>
 
         <p>Contact Name</p>
+
         <input type="text" id="contactName" placeholder="Enter contact name">
 
         <br><br>
@@ -187,23 +188,21 @@ function addContact() {
     `;
 }
 
-function saveContact() {
-    const name = document.getElementById("contactName").value.trim();
+function showContacts() {
+    const contactsList = document.getElementById("contactsList");
 
-    if (name === "") {
-        alert("Please enter a contact name.");
+    let contacts = JSON.parse(localStorage.getItem("ebrContacts")) || [];
+
+    if (contacts.length === 0) {
+        contactsList.innerHTML = "<p>No contacts yet.</p>";
         return;
     }
 
-    document.body.innerHTML = `
-        <h1>👥 CONTACTS</h1>
+    contactsList.innerHTML = "";
 
-        <div id="contactsList">
-            <p>👤 ${name}</p>
-        </div>
-
-        <button onclick="addContact()">＋ ADD CONTACT</button>
-    `;
+    contacts.forEach(function(name) {
+        contactsList.innerHTML += `<p>👤 ${name}</p>`;
+    });
 }
 
 function openPhotos() {
