@@ -1,5 +1,4 @@
 let contacts = [];
-
 function startGame() {
     document.body.innerHTML = `
         <h1>EBR: UNIVERSE</h1>
