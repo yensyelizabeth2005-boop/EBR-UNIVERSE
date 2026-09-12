@@ -434,11 +434,57 @@ function publishComment() {
 
             <div>
                 <p>💬 <strong>You:</strong> ${text}</p>
+                <button onclick="replyToComment()">↩️ REPLY</button>
             </div>
         </div>
 
         <br>
 
         <button onclick="openPhone()">← BACK</button>
+    `;
+}
+
+function replyToComment() {
+    document.body.innerHTML = `
+        <h1>↩️ REPLY</h1>
+
+        <p>Write your reply:</p>
+
+        <textarea id="replyText" placeholder="Write a reply..."></textarea>
+
+        <br><br>
+
+        <button onclick="publishReply()">POST REPLY</button>
+        <button onclick="openSocialFeed()">← BACK</button>
+    `;
+}
+
+function publishReply() {
+    const text = document.getElementById("replyText").value.trim();
+
+    if (text === "") {
+        alert("Please write a reply.");
+        return;
+    }
+
+    document.body.innerHTML = `
+        <h1>🌐 SOCIAL FEED</h1>
+
+        <hr>
+
+        <div>
+            <h3>👤 You</h3>
+            <p>Your post</p>
+
+            <p>💬 <strong>You:</strong> Your comment</p>
+
+            <div>
+                <p>↳ <strong>You:</strong> ${text}</p>
+            </div>
+        </div>
+
+        <br>
+
+        <button onclick="openSocialFeed()">← BACK</button>
     `;
 }
