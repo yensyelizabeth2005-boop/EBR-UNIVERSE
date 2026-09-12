@@ -520,3 +520,25 @@ function publishReply() {
         <button onclick="openSocialFeed()">← BACK</button>
     `;
 }
+
+   function openSavedUniverse(index) {
+    let universes = JSON.parse(localStorage.getItem("universes")) || [];
+    let universe = universes[index];
+
+    if (!universe) {
+        alert("Universe not found.");
+        return;
+    }
+
+    document.body.innerHTML = `
+        <h1>🌌 ${universe.name}</h1>
+
+        <p>Your universe is ready.</p>
+
+        <button onclick="createCharacter()">CREATE CHARACTER</button>
+
+        <br><br>
+
+        <button onclick="openMyStories()">← MY STORIES</button>
+    `;
+}
