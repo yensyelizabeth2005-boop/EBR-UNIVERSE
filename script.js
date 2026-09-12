@@ -384,9 +384,7 @@ function openSocialFeed() {
 }
 
    function likePost(button) { 
-       alert("LIKE WORKS!");
-       
-    let likes = parseInt(button.dataset.likes || "0");
+        let likes = parseInt(button.dataset.likes || "0");
 
     if (button.dataset.liked === "true") {
         likes--;
