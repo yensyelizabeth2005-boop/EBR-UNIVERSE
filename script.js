@@ -655,7 +655,8 @@ function openCharacter(index) {
     if (!character) {
         alert("Character not found.");
         return;
-    }
+    } 
+    localStorage.setItem("currentCharacter", index);
 
     document.body.innerHTML = `
         <h1>👤 ${character.name}</h1>
