@@ -159,11 +159,22 @@ function openMyStories() {
     `;
 }
 function openChat() {
-    document.body.innerHTML = `
+    let messages = JSON.parse(localStorage.getItem("chatMessages")) || [];
+
+    let chatHTML = `
         <h1>CHAT</h1>
 
         <div id="chatBox">
             <p><strong>Character:</strong> Hello. Welcome to Eclipse.</p>
+    `;
+
+    messages.forEach(message => {
+        chatHTML += `
+            <p><strong>${message.sender}:</strong> ${message.text}</p>
+        `;
+    });
+
+    chatHTML += `
         </div>
 
         <br>
@@ -172,6 +183,8 @@ function openChat() {
 
         <button onclick="sendMessage()">SEND</button>
     `;
+
+    document.body.innerHTML = chatHTML;
 }
 
 function sendMessage() {
@@ -198,17 +211,32 @@ function sendMessage() {
     } else if (lowerMessage.includes("who are you")) {
         response = "I'm Luna. There's more to my story than I usually tell people.";
     } else if (lowerMessage.includes("eclipse")) {
-        response = "Eclipse has many secrets. Some of them are better left undiscovered... 🌌"; 
-        } else if (lowerMessage.includes("secret")) {
-    response = "I've spent years searching for answers. I know there's something hidden here, and I'm not going to stop until I find it.";
-} else if (lowerMessage.includes("family")) {
-    response = "The families in this town know more than they admit. I don't trust them... but I need to understand their secrets.";
+        response = "Eclipse has many secrets. Some of them are better left undiscovered... 🌌";
+    } else if (lowerMessage.includes("secret")) {
+        response = "I've spent years searching for answers. I know there's something hidden here, and I'm not going to stop until I find it.";
+    } else if (lowerMessage.includes("family")) {
+        response = "The families in this town know more than they admit. I don't trust them... but I need to understand their secrets.";
     } else {
         response = "That's interesting. Tell me more.";
     }
 
     chatBox.innerHTML +=
         `<p><strong>Luna:</strong> ${response}</p>`;
+
+    // Save the conversation
+    let messages = JSON.parse(localStorage.getItem("chatMessages")) || [];
+
+    messages.push({
+        sender: "You",
+        text: message
+    });
+
+    messages.push({
+        sender: "Luna",
+        text: response
+    });
+
+    localStorage.setItem("chatMessages", JSON.stringify(messages));
 
     input.value = "";
 }
