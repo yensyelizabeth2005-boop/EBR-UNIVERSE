@@ -83,13 +83,28 @@ function createCharacter() {
 }
 
 function saveCharacter() {
-    const name = document.getElementById("characterName").value;
-    const age = document.getElementById("characterAge").value;
+    const name = document.getElementById("characterName").value.trim();
+    const age = document.getElementById("characterAge").value.trim();
+    const personality = document.getElementById("characterPersonality").value.trim();
+    const appearance = document.getElementById("characterAppearance").value.trim();
+    const backstory = document.getElementById("characterBackstory").value.trim();
 
-    if (name.trim() === "" || age.trim() === "") {
+    if (name === "" || age === "") {
         alert("Please enter the character name and age.");
         return;
-    } 
+    }
+
+    let characters = JSON.parse(localStorage.getItem("characters")) || [];
+
+    characters.push({
+        name: name,
+        age: age,
+        personality: personality,
+        appearance: appearance,
+        backstory: backstory
+    });
+
+    localStorage.setItem("characters", JSON.stringify(characters));
 
     document.body.innerHTML = `
         <h1>${name}</h1>
