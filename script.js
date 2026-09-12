@@ -192,12 +192,3 @@ function openNotifications() {
     `;
     }
 
-function openNotifications() {
-    document.body.innerHTML = `
-        <h1>🔔 NOTIFICATIONS</h1>
-
-        <p>No notifications yet.</p>
-
-        <button>← BACK</button>
-    `;
-}
