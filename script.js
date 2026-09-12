@@ -134,16 +134,8 @@ function sendMessage() {
 
 function openProfile() {
     document.body.innerHTML = `
-        <h1>CHARACTER PROFILE</h1>
-
-        <h2>Your Character</h2>
-
-        <p><strong>Profile</strong></p>
-        <p>This character belongs to the Eclipse universe.</p>
-
-        <br>
-
-        <button onclick="openChat()">💬 CHAT</button>
+        <h1>PROFILE</h1>
+        <p>This is your character profile.</p>
     `;
 }
    
