@@ -173,5 +173,11 @@ function openContacts() {
 }
 
 function openPhotos() {
-    alert("PHOTOS WORKS!");
+    document.body.innerHTML = `
+        <h1>📸 PHOTOS</h1>
+
+        <p>No photos yet.</p>
+
+        <button>＋ ADD PHOTO</button>
+    `;
 }
