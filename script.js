@@ -159,13 +159,26 @@ function openMyStories() {
     `;
 }
 function openChat() {
-    let messages = JSON.parse(localStorage.getItem("chatMessages")) || [];
+    const currentCharacter = localStorage.getItem("currentCharacter");
+
+    let characters = JSON.parse(localStorage.getItem("characters")) || [];
+    let character = characters[currentCharacter];
+
+    if (!character) {
+        alert("Character not found.");
+        return;
+    }
+
+    const chatKey = "chatMessages_" + currentCharacter;
+    let messages = JSON.parse(localStorage.getItem(chatKey)) || [];
 
     let chatHTML = `
-        <h1>CHAT</h1>
+        <h1>💬 CHAT</h1>
+
+        <h2>${character.name}</h2>
 
         <div id="chatBox">
-            <p><strong>Character:</strong> Hello. Welcome to Eclipse.</p>
+            <p><strong>${character.name}:</strong> Hello. Welcome to Eclipse.</p>
     `;
 
     messages.forEach(message => {
@@ -182,11 +195,14 @@ function openChat() {
         <input type="text" id="messageInput" placeholder="Write a message">
 
         <button onclick="sendMessage()">SEND</button>
+
+        <br><br>
+
+        <button onclick="openCharacter(${currentCharacter})">← BACK TO CHARACTER</button>
     `;
 
     document.body.innerHTML = chatHTML;
 }
-
 function sendMessage() {
     const input = document.getElementById("messageInput");
     const message = input.value.trim();
