@@ -24,18 +24,28 @@ function createUniverse() {
 }
 
 function saveUniverse() {
-    const name = document.getElementById("universeName").value;
+    const name = document.getElementById("universeName").value.trim();
 
-    if (name.trim() === "") {
+    if (name === "") {
         alert("Please enter a universe name.");
         return;
     }
 
+    let universes = JSON.parse(localStorage.getItem("universes")) || [];
+
+    universes.push({
+        name: name,
+        createdAt: new Date().toISOString()
+    });
+
+    localStorage.setItem("universes", JSON.stringify(universes));
+
     document.body.innerHTML = `
         <h1>${name}</h1>
-        <p>Your universe has been created!</p>
+        <p>Your universe has been created and saved!</p>
 
         <button onclick="createCharacter()">CREATE CHARACTER</button>
+        <button onclick="openMyStories()">MY STORIES</button>
     `;
 }
 
