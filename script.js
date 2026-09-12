@@ -138,4 +138,17 @@ function openProfile() {
         <p>This is your character profile.</p>
     `;
 }
+
+function openPhone() {
+    document.body.innerHTML = `
+        <h1>📱 PHONE</h1>
+
+        <p>Welcome to your character's phone.</p>
+
+        <button>💬 MESSAGES</button>
+        <button>👥 CONTACTS</button>
+        <button>📸 PHOTOS</button>
+        <button>🔔 NOTIFICATIONS</button>
+    `;
+}
    
