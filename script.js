@@ -181,3 +181,7 @@ function openPhotos() {
         <button>＋ ADD PHOTO</button>
     `;
 }
+
+function openNotifications() {
+    alert("NOTIFICATIONS WORKS!");
+}
