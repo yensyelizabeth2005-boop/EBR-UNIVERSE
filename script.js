@@ -19,6 +19,11 @@ function createUniverse() {
 
         <br><br>
 
+        <p>Universe Description</p>
+        <textarea id="universeDescription" placeholder="Describe your universe..."></textarea>
+
+        <br><br>
+
         <button onclick="saveUniverse()">CREATE</button>
     `;
 }
