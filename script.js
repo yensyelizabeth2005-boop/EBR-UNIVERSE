@@ -175,8 +175,13 @@ function sendMessage() {
 
 function openProfile() {
     document.body.innerHTML = `
-        <h1>PROFILE</h1>
+        <h1>👤 PROFILE</h1>
+
+        <h2>Luna Vale</h2>
+
         <p>This is your character profile.</p>
+
+        <button onclick="createCharacter()">EDIT CHARACTER</button>
     `;
 }
 
