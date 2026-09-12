@@ -212,8 +212,16 @@ function sendMessage() {
     }
 
     const currentCharacter = localStorage.getItem("currentCharacter");
-    const chatKey = "chatMessages_" + currentCharacter;
 
+    let characters = JSON.parse(localStorage.getItem("characters")) || [];
+    let character = characters[currentCharacter];
+
+    if (!character) {
+        alert("Character not found.");
+        return;
+    }
+
+    const chatKey = "chatMessages_" + currentCharacter;
     const chatBox = document.getElementById("chatBox");
 
     chatBox.innerHTML +=
@@ -224,7 +232,7 @@ function sendMessage() {
     const lowerMessage = message.toLowerCase();
 
     if (lowerMessage.includes("hello") || lowerMessage.includes("hi")) {
-        response = "Hello! I'm Luna. It's nice to hear from you. 🌙";
+        response = "Hello! It's nice to hear from you. 🌙";
     } else if (lowerMessage.includes("how are you")) {
         response = "I'm doing well. I've been thinking about the secrets of Eclipse. ✨";
     } else if (lowerMessage.includes("who are you")) {
@@ -232,15 +240,15 @@ function sendMessage() {
     } else if (lowerMessage.includes("eclipse")) {
         response = "Eclipse has many secrets. Some of them are better left undiscovered... 🌌";
     } else if (lowerMessage.includes("secret")) {
-        response = "I've spent years searching for answers. I know there's something hidden here, and I'm not going to stop until I find it.";
+        response = "I've spent years searching for answers. I know there's something hidden here.";
     } else if (lowerMessage.includes("family")) {
-        response = "The families in this town know more than they admit. I don't trust them... but I need to understand their secrets.";
+        response = "The families in this town know more than they admit. I don't trust them.";
     } else {
         response = "That's interesting. Tell me more.";
     }
 
     chatBox.innerHTML +=
-        `<p><strong>${characterName}:</strong> ${response}</p>`;
+        `<p><strong>${character.name}:</strong> ${response}</p>`;
 
     let messages = JSON.parse(localStorage.getItem(chatKey)) || [];
 
@@ -250,7 +258,7 @@ function sendMessage() {
     });
 
     messages.push({
-        sender: characterName,
+        sender: character.name,
         text: response
     });
 
@@ -258,6 +266,7 @@ function sendMessage() {
 
     input.value = "";
 }
+
 function openProfile() {
     document.body.innerHTML = `
         <h1>👤 PROFILE</h1>
