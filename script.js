@@ -187,8 +187,24 @@ function sendMessage() {
     chatBox.innerHTML +=
         `<p><strong>You:</strong> ${message}</p>`;
 
+    let response;
+
+    const lowerMessage = message.toLowerCase();
+
+    if (lowerMessage.includes("hello") || lowerMessage.includes("hi")) {
+        response = "Hello! I'm Luna. It's nice to hear from you. 🌙";
+    } else if (lowerMessage.includes("how are you")) {
+        response = "I'm doing well. I've been thinking about the secrets of Eclipse. ✨";
+    } else if (lowerMessage.includes("who are you")) {
+        response = "I'm Luna. There's more to my story than I usually tell people.";
+    } else if (lowerMessage.includes("eclipse")) {
+        response = "Eclipse has many secrets. Some of them are better left undiscovered... 🌌";
+    } else {
+        response = "That's interesting. Tell me more.";
+    }
+
     chatBox.innerHTML +=
-        `<p><strong>Luna:</strong> Hello! It's nice to hear from you. 🌙</p>`;
+        `<p><strong>Luna:</strong> ${response}</p>`;
 
     input.value = "";
 }
