@@ -211,6 +211,9 @@ function sendMessage() {
         return;
     }
 
+    const currentCharacter = localStorage.getItem("currentCharacter");
+    const chatKey = "chatMessages_" + currentCharacter;
+
     const chatBox = document.getElementById("chatBox");
 
     chatBox.innerHTML +=
@@ -237,10 +240,9 @@ function sendMessage() {
     }
 
     chatBox.innerHTML +=
-        `<p><strong>Luna:</strong> ${response}</p>`;
+        `<p><strong>${characterName}:</strong> ${response}</p>`;
 
-    // Save the conversation
-    let messages = JSON.parse(localStorage.getItem("chatMessages")) || [];
+    let messages = JSON.parse(localStorage.getItem(chatKey)) || [];
 
     messages.push({
         sender: "You",
@@ -248,15 +250,14 @@ function sendMessage() {
     });
 
     messages.push({
-        sender: "Luna",
+        sender: characterName,
         text: response
     });
 
-    localStorage.setItem("chatMessages", JSON.stringify(messages));
+    localStorage.setItem(chatKey, JSON.stringify(messages));
 
     input.value = "";
 }
-
 function openProfile() {
     document.body.innerHTML = `
         <h1>👤 PROFILE</h1>
