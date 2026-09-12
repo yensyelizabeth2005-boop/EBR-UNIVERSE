@@ -221,9 +221,14 @@ function openPhotos() {
     document.body.innerHTML = `
         <h1>📸 PHOTOS</h1>
 
-        <p>No photos yet.</p>
+        <div id="photoList">
+            <p>No photos yet.</p>
+        </div>
 
-        <button>＋ ADD PHOTO</button>
+        <br>
+
+        <button onclick="addPhoto()">＋ ADD PHOTO</button>
+        <button onclick="openPhone()">← BACK</button>
     `;
 }
 
