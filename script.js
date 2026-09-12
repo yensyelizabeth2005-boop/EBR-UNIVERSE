@@ -147,7 +147,7 @@ function openPhone() {
 
         <button onclick="openMessages()">💬 MESSAGES</button>
        <button onclick="openContacts()">👥 CONTACTS</button>
-        <button>📸 PHOTOS</button>
+        <button onclick="openPhotos()">📸 PHOTOS</button>
         <button>🔔 NOTIFICATIONS</button>
     `;
 }
