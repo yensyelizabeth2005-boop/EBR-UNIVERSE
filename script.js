@@ -145,7 +145,7 @@ function openPhone() {
 
         <p>Welcome to your character's phone.</p>
 
-        <button onclick="openMessages()">💬 MESSAGES</button>
+        <button onclick="alert('MESSAGES WORKS!')">💬 MESSAGES</button>
         <button>👥 CONTACTS</button>
         <button>📸 PHOTOS</button>
         <button>🔔 NOTIFICATIONS</button>
