@@ -175,6 +175,20 @@ function openContacts() {
     showContacts();
 }
 
+function addContact() {
+    document.body.innerHTML = `
+        <h1>＋ ADD CONTACT</h1>
+
+        <p>Contact Name</p>
+
+        <input type="text" id="contactName" placeholder="Enter a contact name">
+
+        <br><br>
+
+        <button onclick="saveContact()">ADD</button>
+    `;
+}
+
 function saveContact() {
     const name = document.getElementById("contactName").value.trim();
 
