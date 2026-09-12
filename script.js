@@ -166,9 +166,24 @@ function openContacts() {
     document.body.innerHTML = `
         <h1>👥 CONTACTS</h1>
 
-        <p>No contacts yet.</p>
+        <div id="contactsList">
+            <p>No contacts yet.</p>
+        </div>
 
-        <button>＋ ADD CONTACT</button>
+        <button onclick="addContact()">＋ ADD CONTACT</button>
+    `;
+}
+
+function addContact() {
+    document.body.innerHTML = `
+        <h1>＋ ADD CONTACT</h1>
+
+        <p>Contact Name</p>
+        <input type="text" id="contactName" placeholder="Enter contact name">
+
+        <br><br>
+
+        <button onclick="saveContact()">ADD</button>
     `;
 }
 
