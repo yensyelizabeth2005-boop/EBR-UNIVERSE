@@ -44,13 +44,15 @@
             <span>Your story begins here.</span>
         </div>
 
-        <button class="continue-button" id="continueButton" onclick="enterUniverse()">
-            CONTINUE ✦
-        </button>
+        <button class="continue-button" id="continueButton"
+    onclick="document.getElementById('cinematicIntro').style.display='none'; document.getElementById('openingScreen').style.display='flex';">
+    CONTINUE ✦
+</button>
 
-        <button class="skip-intro" onclick="enterUniverse()">
-            SKIP
-        </button>
+<button class="skip-intro"
+    onclick="document.getElementById('cinematicIntro').style.display='none'; document.getElementById('openingScreen').style.display='flex';">
+    SKIP
+</button>
 
     </main>
 
