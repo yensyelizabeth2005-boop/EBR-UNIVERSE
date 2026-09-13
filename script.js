@@ -26,7 +26,7 @@ function createUniverse() {
             <p style="font-size: 28px;">Universe Name</p>
 <input 
     type="text" 
-    id="universeName" 
+    <p style="font-size: 40px !important;">Universe Name</p>
     placeholder="Enter a name"
     style="font-size: 24px; padding: 15px; width: 80%;"
 >
