@@ -229,7 +229,7 @@ function openChat() {
 
     document.body.innerHTML = chatHTML;
 }
-function sendMessage() {
+async function sendMessage() {
     const input = document.getElementById("messageInput");
     const message = input.value.trim();
 
@@ -253,46 +253,85 @@ function sendMessage() {
     chatBox.innerHTML +=
         `<p><strong>You:</strong> ${message}</p>`;
 
-    let response;
-
-    const lowerMessage = message.toLowerCase();
-
-    if (lowerMessage.includes("hello") || lowerMessage.includes("hi")) {
-        response = "Hello! It's nice to hear from you. 🌙";
-    } else if (lowerMessage.includes("how are you")) {
-        response = "I'm doing well. I've been thinking about the secrets of Eclipse. ✨";
-    } else if (lowerMessage.includes("who are you")) {
-        response = "I'm Luna. There's more to my story than I usually tell people.";
-    } else if (lowerMessage.includes("eclipse")) {
-        response = "Eclipse has many secrets. Some of them are better left undiscovered... 🌌";
-    } else if (lowerMessage.includes("secret")) {
-        response = "I've spent years searching for answers. I know there's something hidden here.";
-    } else if (lowerMessage.includes("family")) {
-        response = "The families in this town know more than they admit. I don't trust them.";
-    } else {
-        response = "That's interesting. Tell me more.";
-    }
+    input.value = "";
 
     chatBox.innerHTML +=
-        `<p><strong>${character.name}:</strong> ${response}</p>`;
+        `<p id="aiThinking"><strong>${character.name}:</strong> Thinking... ✨</p>`;
 
-    let messages = JSON.parse(localStorage.getItem(chatKey)) || [];
+    try {
+        const characterContext = `
+You are ${character.name}, a character inside the EBR: UNIVERSE game.
 
-    messages.push({
-        sender: "You",
-        text: message
-    });
+Personality:
+${character.personality || "Not specified"}
 
-    messages.push({
-        sender: character.name,
-        text: response
-    });
+Appearance:
+${character.appearance || "Not specified"}
 
-    localStorage.setItem(chatKey, JSON.stringify(messages));
+Backstory:
+${character.backstory || "Not specified"}
 
-    input.value = "";
+Stay in character while responding to the player.
+
+Player message:
+${message}
+`;
+
+        const response = await fetch("/api/chat", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                message: characterContext
+            })
+        });
+
+        const data = await response.json();
+
+        const thinking = document.getElementById("aiThinking");
+
+        if (thinking) {
+            thinking.remove();
+        }
+
+        if (!response.ok) {
+            throw new Error(data.error || "AI request failed");
+        }
+
+        const aiReply = data.reply;
+
+        chatBox.innerHTML +=
+            `<p><strong>${character.name}:</strong> ${aiReply}</p>`;
+
+        let messages = JSON.parse(localStorage.getItem(chatKey)) || [];
+
+        messages.push({
+            sender: "You",
+            text: message
+        });
+
+        messages.push({
+            sender: character.name,
+            text: aiReply
+        });
+
+        localStorage.setItem(chatKey, JSON.stringify(messages));
+
+    } catch (error) {
+
+        const thinking = document.getElementById("aiThinking");
+
+        if (thinking) {
+            thinking.remove();
+        }
+
+        chatBox.innerHTML +=
+            `<p><strong>System:</strong> The AI could not respond right now. Please try again.</p>`;
+
+        console.error(error);
+    }
 }
-
 function openProfile() {
     document.body.innerHTML = `
         <h1>👤 PROFILE</h1>
