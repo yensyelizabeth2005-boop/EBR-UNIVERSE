@@ -19,19 +19,26 @@ function startGame() {
 
 function createUniverse() {
     document.body.innerHTML = `
-        <h1>Create Your Universe</h1>
+        <div class="universe-page">
 
-        <p>Universe Name</p>
-        <input type="text" id="universeName" placeholder="Enter a name">
+            <h1>Create Your Universe</h1>
 
-        <br><br>
+            <label>Universe Name</label>
+            <input 
+                type="text" 
+                id="universeName" 
+                placeholder="Enter a name"
+            >
 
-        <p>Universe Description</p>
-        <textarea id="universeDescription" placeholder="Describe your universe..."></textarea>
+            <label>Universe Description</label>
+            <textarea 
+                id="universeDescription" 
+                placeholder="Describe your universe..."
+            ></textarea>
 
-        <br><br>
+            <button onclick="saveUniverse()">CREATE</button>
 
-        <button onclick="saveUniverse()">CREATE</button>
+        </div>
     `;
 }
 function saveUniverse() {
