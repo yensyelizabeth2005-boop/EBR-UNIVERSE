@@ -55,7 +55,7 @@ function openAccount() {
 
             <button>📧 Email</button>
 
-            <button>↩️ Back to Settings</button>
+            <button onclick="openSettings()">↩️ Back to Settings</button>
 
         </div>
     `;
