@@ -12,12 +12,61 @@
 
 <body>
 
-    <main class="opening-screen">
+    <!-- EBR CINEMATIC INTRO -->
+
+    <main class="cinematic-intro" id="cinematicIntro">
+
+        <div class="intro-stars">✦ ✧ ⋆ ✦ ⋆ ✧ ✦</div>
+
+        <div class="intro-circle circle-one">
+            <div class="lumi">✨</div>
+        </div>
+
+        <div class="intro-circle circle-two">
+            <div class="intro-character">♡</div>
+        </div>
+
+        <div class="intro-logo">
+
+            <h1>EBR</h1>
+
+            <h2>UNIVERSE</h2>
+
+        </div>
+
+        <div class="intro-message" id="introMessage">
+            <p>Hello, EBR Universe! ✨</p>
+            <span>Welcome to your reality.</span>
+        </div>
+
+        <div class="welcome-message" id="welcomeMessage">
+            <p>Welcome to EBR UNIVERSE.</p>
+            <span>Your story begins here.</span>
+        </div>
+
+        <button class="continue-button" id="continueButton" onclick="enterUniverse()">
+            CONTINUE ✦
+        </button>
+
+        <button class="skip-intro" onclick="enterUniverse()">
+            SKIP
+        </button>
+
+    </main>
+
+
+    <!-- ORIGINAL EBR OPENING SCREEN -->
+
+    <main class="opening-screen" id="openingScreen" style="display: none;">
 
         <div class="company-logo">
+
             <p>Creado por</p>
+
             <strong>♕ EBR</strong>
+
             <p>Compañía EBR</p>
+
         </div>
 
         <section class="game-title">
@@ -66,7 +115,8 @@
 
     </main>
 
-    <script src="script.js?v=16"></script>
+
+    <script src="script.js?v=17"></script>
 
 </body>
 
