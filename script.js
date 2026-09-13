@@ -5,13 +5,17 @@ function enterUniverse() {
     const intro = document.getElementById("cinematicIntro");
     const opening = document.getElementById("openingScreen");
 
-    if (intro) {
-        intro.style.display = "none";
+    if (!intro || !opening) {
+        console.error("EBR: Intro or opening screen not found.");
+        return;
     }
 
-    if (opening) {
-        opening.style.display = "flex";
-    }
+    intro.remove();
+    opening.style.display = "flex";
+}
+
+function skipIntro() {
+    enterUniverse();
 }
 
 function startGame() {
