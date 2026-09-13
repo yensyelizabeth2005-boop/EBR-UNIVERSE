@@ -1,71 +1,32 @@
 let contacts = [];
-function startGame() {
-    document.body.innerHTML = `
-        <div class="cinematic-intro">
+let contacts = [];
 
-            <div class="magic-orb orb-one"></div>
-            <div class="magic-orb orb-two"></div>
+function enterUniverse() {
+    const intro = document.getElementById("cinematicIntro");
+    const opening = document.getElementById("openingScreen");
 
-            <div class="stars">✦　✧　⋆　✦　⋆　✧　✦</div>
+    if (intro) {
+        intro.style.display = "none";
+    }
 
-            <div class="intro-logo">
-                <h1>EBR</h1>
-                <h2>UNIVERSE</h2>
-            </div>
-
-            <div class="lumi" id="lumi">
-                ✨
-                <div class="lumi-name">Lumi</div>
-            </div>
-
-            <div class="welcome-message" id="welcomeMessage">
-                <p>¡Hola! ✨</p>
-                <span>Soy Lumi.</span>
-            </div>
-
-            <div class="heroine" id="heroine">
-                ♡
-            </div>
-
-            <div class="hero-message" id="heroMessage">
-                <p>¡Bienvenida a EBR UNIVERSE! ♡</p>
-            </div>
-
-            <div class="final-message" id="finalMessage">
-                <h2>EBR UNIVERSE</h2>
-                <p>Tu historia comienza ahora.</p>
-            </div>
-
-            <div class="skip-intro">
-                <button onclick="skipIntro()">SKIP</button>
-            </div>
-
-        </div>
-    `;
-
-    setTimeout(() => {
-        document.getElementById("welcomeMessage").classList.add("show");
-    }, 5000);
-
-    setTimeout(() => {
-        document.getElementById("heroine").classList.add("show");
-    }, 18000);
-
-    setTimeout(() => {
-        document.getElementById("heroMessage").classList.add("show");
-    }, 23000);
-
-    setTimeout(() => {
-        document.getElementById("finalMessage").classList.add("show");
-    }, 43000);
-
-    setTimeout(() => {
-        startMainMenu();
-    }, 60000);
+    if (opening) {
+        opening.style.display = "flex";
+    }
 }
 
+function startGame() {
+    startMainMenu();
+}
 
-function skipIntro() {
+/* Intro automático de 60 segundos */
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    setTimeout(function() {
+        enterUniverse();
+    }, 60000);
+
+});
     startMainMenu();
 }
 
