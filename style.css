@@ -7,11 +7,275 @@ body {
     min-height: 100vh;
     font-family: Georgia, "Times New Roman", serif;
     color: white;
-    background:
-        radial-gradient(circle at 50% 20%, rgba(130, 90, 220, 0.45), transparent 35%),
-        radial-gradient(circle at 80% 70%, rgba(80, 40, 180, 0.35), transparent 35%),
-        linear-gradient(135deg, #050718, #11113a, #24104a);
+    background: #050718;
 }
+
+/* =========================
+   CINEMATIC INTRO
+========================= */
+
+.cinematic-intro {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(circle at 50% 40%, rgba(150, 100, 255, 0.35), transparent 35%),
+        radial-gradient(circle at 20% 80%, rgba(90, 60, 220, 0.25), transparent 35%),
+        linear-gradient(135deg, #030515, #10103b, #28104d);
+}
+
+/* estrellas */
+
+.intro-stars {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+    letter-spacing: 22px;
+    opacity: 0;
+    animation: starsAppear 3s ease forwards;
+}
+
+/* círculos de personajes */
+
+.intro-circle {
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: radial-gradient(
+        circle,
+        rgba(180, 150, 255, 0.35),
+        rgba(40, 20, 90, 0.15),
+        transparent 70%
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    box-shadow:
+        0 0 30px rgba(180, 140, 255, 0.5),
+        inset 0 0 30px rgba(180, 140, 255, 0.2);
+
+    opacity: 0;
+}
+
+.circle-one {
+    left: 12%;
+    top: 30%;
+    animation: characterAppear 3s ease 10s forwards;
+}
+
+.circle-two {
+    right: 12%;
+    top: 30%;
+    animation: characterAppear 3s ease 20s forwards;
+}
+
+.lumi {
+    font-size: 65px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.intro-character {
+    font-size: 65px;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* logo */
+
+.intro-logo {
+    text-align: center;
+    opacity: 0;
+    animation: logoAppear 4s ease 3s forwards;
+}
+
+.intro-logo h1 {
+    margin: 0;
+    font-size: 90px;
+    letter-spacing: 18px;
+    text-shadow: 0 0 30px rgba(220, 200, 255, 0.9);
+}
+
+.intro-logo h2 {
+    margin: 5px 0;
+    font-size: 30px;
+    letter-spacing: 14px;
+    font-weight: normal;
+}
+
+/* mensajes */
+
+.intro-message,
+.welcome-message {
+    position: absolute;
+    bottom: 23%;
+    text-align: center;
+    opacity: 0;
+}
+
+.intro-message {
+    animation: messageOne 6s ease 10s forwards;
+}
+
+.welcome-message {
+    animation: messageTwo 6s ease 35s forwards;
+}
+
+.intro-message p,
+.welcome-message p {
+    margin: 0;
+    font-size: 28px;
+}
+
+.intro-message span,
+.welcome-message span {
+    display: block;
+    margin-top: 10px;
+    font-size: 17px;
+    opacity: 0.8;
+}
+
+/* botón */
+
+.continue-button {
+    position: absolute;
+    bottom: 9%;
+
+    padding: 14px 45px;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+
+    background: rgba(40, 25, 90, 0.7);
+    color: white;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    letter-spacing: 4px;
+
+    cursor: pointer;
+
+    opacity: 0;
+    animation: buttonAppear 3s ease 48s forwards;
+
+    box-shadow: 0 0 25px rgba(180, 140, 255, 0.6);
+}
+
+.continue-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(210, 190, 255, 0.9);
+}
+
+/* skip */
+
+.skip-intro {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+
+    cursor: pointer;
+}
+
+/* =========================
+   ANIMACIONES
+========================= */
+
+@keyframes starsAppear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.6;
+    }
+}
+
+@keyframes logoAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes characterAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.5) translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes messageOne {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes messageTwo {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes buttonAppear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* =========================
+   OPENING SCREEN
+========================= */
 
 .opening-screen {
     min-height: 100vh;
@@ -21,18 +285,11 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-}
 
-.opening-screen::before {
-    content: "✦  ✧  ⋆  ✦  ⋆  ✧  ✦  ⋆  ✧  ✦";
-    position: absolute;
-    top: 8%;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    font-size: 28px;
-    letter-spacing: 25px;
-    opacity: 0.5;
+    background:
+        radial-gradient(circle at 50% 20%, rgba(130, 90, 220, 0.45), transparent 35%),
+        radial-gradient(circle at 80% 70%, rgba(80, 40, 180, 0.35), transparent 35%),
+        linear-gradient(135deg, #050718, #11113a, #24104a);
 }
 
 .company-logo {
@@ -128,7 +385,37 @@ body {
     background: rgba(80, 60, 140, 0.8);
 }
 
+/* celular */
+
 @media (max-width: 600px) {
+
+    .intro-logo h1 {
+        font-size: 55px;
+        letter-spacing: 8px;
+    }
+
+    .intro-logo h2 {
+        font-size: 22px;
+        letter-spacing: 7px;
+    }
+
+    .intro-circle {
+        width: 120px;
+        height: 120px;
+    }
+
+    .lumi,
+    .intro-character {
+        font-size: 40px;
+    }
+
+    .circle-one {
+        left: 5%;
+    }
+
+    .circle-two {
+        right: 5%;
+    }
 
     .game-title h1 {
         font-size: 55px;
@@ -151,346 +438,4 @@ body {
         flex-wrap: wrap;
         justify-content: center;
     }
-}
-
-/* MAIN MENU */
-
-.main-menu {
-    text-align: center;
-    width: 90%;
-    max-width: 600px;
-    margin: auto;
-}
-
-.main-menu h1 {
-    font-size: 42px;
-    letter-spacing: 3px;
-    margin-bottom: 15px;
-}
-
-.main-menu p {
-    font-size: 22px;
-    margin-bottom: 35px;
-}
-
-.main-menu button {
-    display: block;
-    width: 100%;
-    max-width: 420px;
-    margin: 15px auto;
-    padding: 18px 25px;
-    font-size: 22px;
-    letter-spacing: 2px;
-    border-radius: 12px;
-}
-
-/* CREATE UNIVERSE PAGE */
-
-.universe-page {
-    width: 90%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.universe-page h1 {
-    font-size: 100px;
-    margin-bottom: 45px;
-}
-
-.universe-page label {
-    display: block;
-    text-align: left;
-    font-size: 25px;
-    margin: 25px 0 10px;
-}
-
-.universe-page input,
-.universe-page textarea {
-    width: 100%;
-    padding: 18px;
-    font-size: 21px;
-    font-family: Georgia, "Times New Roman", serif;
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.7);
-    background: rgba(10, 10, 35, 0.8);
-    color: white;
-}
-
-.universe-page input {
-    height: 60px;
-}
-
-.universe-page textarea {
-    min-height: 220px;
-    resize: vertical;
-}
-
-.universe-page input::placeholder,
-.universe-page textarea::placeholder {
-    color: rgba(255,255,255,0.6);
-}
-
-.universe-page button {
-    margin-top: 35px;
-    padding: 17px 55px;
-    font-size: 23px;
-    letter-spacing: 4px;
-    border-radius: 12px;
-    border: 1px solid white;
-    background: rgba(40, 25, 100, 0.8);
-    color: white;
-    cursor: pointer;
-}
-
- /* =========================
-   EBR CINEMATIC INTRO
-========================= */
-
-.cinematic-intro {
-    position: fixed;
-    inset: 0;
-    overflow: hidden;
-    background:
-        radial-gradient(circle at 50% 35%, #3d246d, transparent 35%),
-        linear-gradient(135deg, #030516, #171044, #35104d);
-    color: white;
-    font-family: Georgia, "Times New Roman", serif;
-    animation: introBreathing 8s ease-in-out infinite;
-}
-
-@keyframes introBreathing {
-    0%, 100% {
-        filter: brightness(0.9);
-    }
-
-    50% {
-        filter: brightness(1.15);
-    }
-}
-
-.intro-logo {
-    position: absolute;
-    top: 13%;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    animation: logoAppear 4s ease forwards;
-}
-
-.intro-logo h1 {
-    margin: 0;
-    font-size: 80px;
-    letter-spacing: 18px;
-    text-shadow: 0 0 35px #d9b8ff;
-}
-
-.intro-logo h2 {
-    margin: 5px 0;
-    font-size: 25px;
-    letter-spacing: 12px;
-    font-weight: normal;
-}
-
-@keyframes logoAppear {
-    from {
-        opacity: 0;
-        transform: translateX(-50%) scale(0.7);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(-50%) scale(1);
-    }
-}
-
-.stars {
-    position: absolute;
-    top: 7%;
-    width: 100%;
-    text-align: center;
-    font-size: 28px;
-    letter-spacing: 15px;
-    animation: starsMove 6s ease-in-out infinite;
-}
-
-@keyframes starsMove {
-    0%, 100% {
-        transform: translateY(0);
-        opacity: 0.5;
-    }
-
-    50% {
-        transform: translateY(-18px);
-        opacity: 1;
-    }
-}
-
-.lumi {
-    position: absolute;
-    top: 43%;
-    left: 18%;
-    font-size: 85px;
-    animation: lumiFloat 4s ease-in-out infinite;
-    text-shadow: 0 0 35px #e4c5ff;
-}
-
-.lumi-name {
-    font-size: 17px;
-    text-align: center;
-    letter-spacing: 3px;
-}
-
-@keyframes lumiFloat {
-    0%, 100% {
-        transform: translateY(0) rotate(-5deg);
-    }
-
-    50% {
-        transform: translateY(-35px) rotate(5deg);
-    }
-}
-
-.welcome-message,
-.hero-message,
-.final-message {
-    position: absolute;
-    opacity: 0;
-    transform: translateY(25px);
-    transition: 2s ease;
-}
-
-.welcome-message.show,
-.hero-message.show,
-.final-message.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.welcome-message {
-    top: 45%;
-    left: 30%;
-    padding: 20px 30px;
-    border: 1px solid rgba(255,255,255,0.5);
-    border-radius: 20px;
-    background: rgba(20,10,60,0.65);
-    box-shadow: 0 0 30px rgba(200,160,255,0.5);
-}
-
-.welcome-message p,
-.hero-message p {
-    margin: 0 0 8px;
-    font-size: 25px;
-}
-
-.welcome-message span {
-    font-size: 17px;
-}
-
-.heroine {
-    position: absolute;
-    right: 12%;
-    bottom: 15%;
-    font-size: 150px;
-    opacity: 0;
-    transform: translateX(80px) scale(0.8);
-    transition: 4s ease;
-    text-shadow: 0 0 40px #ffb8ef;
-}
-
-.heroine.show {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-    animation: heroineFloat 5s ease-in-out infinite;
-}
-
-@keyframes heroineFloat {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-15px);
-    }
-}
-
-.hero-message {
-    right: 25%;
-    bottom: 42%;
-    padding: 22px 35px;
-    border-radius: 22px;
-    background: rgba(30,10,70,0.7);
-    border: 1px solid rgba(255,255,255,0.6);
-    box-shadow: 0 0 35px rgba(220,170,255,0.6);
-}
-
-.final-message {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, 25px);
-    text-align: center;
-}
-
-.final-message.show {
-    transform: translate(-50%, 0);
-}
-
-.final-message h2 {
-    font-size: 55px;
-    letter-spacing: 10px;
-    margin: 0;
-}
-
-.final-message p {
-    font-size: 22px;
-}
-
-.magic-orb {
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    border: 1px solid rgba(220,190,255,0.35);
-    border-radius: 50%;
-    animation: orbit 12s linear infinite;
-}
-
-.orb-one {
-    top: 30%;
-    left: 35%;
-}
-
-.orb-two {
-    bottom: 10%;
-    right: 20%;
-    animation-direction: reverse;
-}
-
-@keyframes orbit {
-    from {
-        transform: rotate(0deg) scale(1);
-    }
-
-    50% {
-        transform: rotate(180deg) scale(1.12);
-    }
-
-    to {
-        transform: rotate(360deg) scale(1);
-    }
-}
-
-.skip-intro {
-    position: absolute;
-    right: 25px;
-    bottom: 20px;
-}
-
-.skip-intro button {
-    padding: 9px 18px;
-    border: 1px solid rgba(255,255,255,0.4);
-    border-radius: 10px;
-    background: rgba(0,0,0,0.35);
-    color: white;
-    cursor: pointer;
 }
