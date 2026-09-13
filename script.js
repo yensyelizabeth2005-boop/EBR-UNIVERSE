@@ -21,7 +21,7 @@ function createUniverse() {
     document.body.innerHTML = `
         <div class="universe-page">
 
-            <h1>Create Your Universe</h1>
+            <h1 style="font-size: 70px;">Create Your Universe</h1>
 
             <label>Universe Name</label>
             <input 
