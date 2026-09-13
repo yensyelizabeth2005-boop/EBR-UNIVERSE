@@ -31,11 +31,31 @@ function openSettings() {
 
             <button>🔠 Text Size</button>
 
-            <button>👤 My Account</button>
+            <button onclick="openAccount()">👤 My Account</button>
 
             <button>❓ Help & Support</button>
 
             <button onclick="startGame()">↩️ Back to Main Menu</button>
+
+        </div>
+    `;
+}
+
+function openAccount() {
+    document.body.innerHTML = `
+        <div class="account-page">
+
+            <h1>MY ACCOUNT</h1>
+
+            <p>Welcome to your EBR Universe account.</p>
+
+            <button>👤 Profile</button>
+
+            <button>🔐 Account & Security</button>
+
+            <button>📧 Email</button>
+
+            <button>↩️ Back to Settings</button>
 
         </div>
     `;
