@@ -23,8 +23,9 @@ function createUniverse() {
 
             <h1 style="font-size: 70px;">Create Your Universe</h1>
 
-            <p style="font-size: 40px !important;">Universe Name</p>
-
+            <p style="font-size: 100px !important; color: red !important;">
+    UNIVERSE NAME TEST
+</p>
             <input
                 type="text"
                 id="universeName"
