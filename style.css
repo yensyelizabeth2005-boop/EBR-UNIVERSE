@@ -120,16 +120,23 @@ body {
 .welcome-message {
     position: absolute;
     bottom: 23%;
+    width: 100%;
     text-align: center;
     opacity: 0;
 }
 
+/* 10–30 segundos */
+
 .intro-message {
-    animation: messageOne 6s ease 10s forwards;
+    animation: messageOne 20s ease 10s forwards;
 }
 
+/* 35–48 segundos */
+
 .welcome-message {
-    animation: messageTwo 6s ease 35s forwards;
+    animation: messageTwo 13s ease 35s forwards;
+}
+
 }
 
 .intro-message p,
@@ -230,26 +237,48 @@ body {
 }
 
 @keyframes messageOne {
-    from {
+
+    0% {
         opacity: 0;
         transform: translateY(20px);
     }
 
-    to {
+    15% {
         opacity: 1;
         transform: translateY(0);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
     }
 }
 
 @keyframes messageTwo {
-    from {
+
+    0% {
         opacity: 0;
         transform: translateY(20px);
     }
 
-    to {
+    15% {
         opacity: 1;
         transform: translateY(0);
+    }
+
+    85% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
     }
 }
 
