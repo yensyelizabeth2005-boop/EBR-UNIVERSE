@@ -23,27 +23,31 @@ function createUniverse() {
 
             <h1 style="font-size: 70px;">Create Your Universe</h1>
 
-            <p style="font-size: 28px;">Universe Name</p>
-<input 
-    type="text" 
-    <p style="font-size: 40px !important;">Universe Name</p>
-    placeholder="Enter a name"
-    style="font-size: 24px; padding: 15px; width: 80%;"
->
+            <p style="font-size: 40px !important;">Universe Name</p>
 
-           <p style="font-size: 28px;">Universe Description</p>
-<textarea 
-    id="universeDescription" 
-    placeholder="Describe your universe..."
-    style="font-size: 24px; padding: 15px; width: 80%; height: 200px;"
-></textarea>
+            <input
+                type="text"
+                id="universeName"
+                placeholder="Enter a name"
+                style="font-size: 24px; padding: 15px; width: 80%;"
+            >
 
-            <button 
-    onclick="saveUniverse()"
-    style="font-size: 24px; padding: 15px 40px;"
->
-    CREATE
-</button>
+            <p style="font-size: 40px !important;">Universe Description</p>
+
+            <textarea
+                id="universeDescription"
+                placeholder="Describe your universe..."
+                style="font-size: 24px; padding: 15px; width: 80%; height: 200px;"
+            ></textarea>
+
+            <br><br>
+
+            <button
+                onclick="saveUniverse()"
+                style="font-size: 24px; padding: 15px 40px;"
+            >
+                CREATE
+            </button>
 
         </div>
     `;
