@@ -183,3 +183,63 @@ body {
     letter-spacing: 2px;
     border-radius: 12px;
 }
+
+/* CREATE UNIVERSE PAGE */
+
+.universe-page {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.universe-page h1 {
+    font-size: 52px;
+    margin-bottom: 45px;
+}
+
+.universe-page label {
+    display: block;
+    text-align: left;
+    font-size: 25px;
+    margin: 25px 0 10px;
+}
+
+.universe-page input,
+.universe-page textarea {
+    width: 100%;
+    padding: 18px;
+    font-size: 21px;
+    font-family: Georgia, "Times New Roman", serif;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.7);
+    background: rgba(10, 10, 35, 0.8);
+    color: white;
+}
+
+.universe-page input {
+    height: 60px;
+}
+
+.universe-page textarea {
+    min-height: 220px;
+    resize: vertical;
+}
+
+.universe-page input::placeholder,
+.universe-page textarea::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+.universe-page button {
+    margin-top: 35px;
+    padding: 17px 55px;
+    font-size: 23px;
+    letter-spacing: 4px;
+    border-radius: 12px;
+    border: 1px solid white;
+    background: rgba(40, 25, 100, 0.8);
+    color: white;
+    cursor: pointer;
+}
