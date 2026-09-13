@@ -1,12 +1,19 @@
 let contacts = [];
 function startGame() {
     document.body.innerHTML = `
-        <h1>EBR: UNIVERSE</h1>
-        <p>Welcome to your universe.</p>
+        <div class="main-menu">
 
-        <button onclick="createUniverse()">CREATE UNIVERSE</button>
-        <button onclick="openMyStories()">MY STORIES</button>
-        <button>SETTINGS</button>
+            <h1>EBR: UNIVERSE</h1>
+
+            <p>Welcome to your universe.</p>
+
+            <button onclick="createUniverse()">CREATE UNIVERSE</button>
+
+            <button onclick="openMyStories()">MY STORIES</button>
+
+            <button>SETTINGS</button>
+
+        </div>
     `;
 }
 
