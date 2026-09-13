@@ -11,7 +11,31 @@ function startGame() {
 
             <button onclick="openMyStories()">MY STORIES</button>
 
-            <button>SETTINGS</button>
+            <button onclick="openSettings()">SETTINGS</button>
+
+        </div>
+    `;
+}
+
+function openSettings() {
+    document.body.innerHTML = `
+        <div class="settings-page">
+
+            <h1>SETTINGS</h1>
+
+            <button>🔒 Privacy</button>
+
+            <button>🔔 Notifications</button>
+
+            <button>🌎 Language</button>
+
+            <button>🔠 Text Size</button>
+
+            <button>👤 My Account</button>
+
+            <button>❓ Help & Support</button>
+
+            <button onclick="startGame()">↩️ Back to Main Menu</button>
 
         </div>
     `;
