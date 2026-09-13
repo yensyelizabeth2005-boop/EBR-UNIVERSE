@@ -243,3 +243,254 @@ body {
     color: white;
     cursor: pointer;
 }
+
+ /* =========================
+   EBR CINEMATIC INTRO
+========================= */
+
+.cinematic-intro {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 50% 35%, #3d246d, transparent 35%),
+        linear-gradient(135deg, #030516, #171044, #35104d);
+    color: white;
+    font-family: Georgia, "Times New Roman", serif;
+    animation: introBreathing 8s ease-in-out infinite;
+}
+
+@keyframes introBreathing {
+    0%, 100% {
+        filter: brightness(0.9);
+    }
+
+    50% {
+        filter: brightness(1.15);
+    }
+}
+
+.intro-logo {
+    position: absolute;
+    top: 13%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    animation: logoAppear 4s ease forwards;
+}
+
+.intro-logo h1 {
+    margin: 0;
+    font-size: 80px;
+    letter-spacing: 18px;
+    text-shadow: 0 0 35px #d9b8ff;
+}
+
+.intro-logo h2 {
+    margin: 5px 0;
+    font-size: 25px;
+    letter-spacing: 12px;
+    font-weight: normal;
+}
+
+@keyframes logoAppear {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+.stars {
+    position: absolute;
+    top: 7%;
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+    letter-spacing: 15px;
+    animation: starsMove 6s ease-in-out infinite;
+}
+
+@keyframes starsMove {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translateY(-18px);
+        opacity: 1;
+    }
+}
+
+.lumi {
+    position: absolute;
+    top: 43%;
+    left: 18%;
+    font-size: 85px;
+    animation: lumiFloat 4s ease-in-out infinite;
+    text-shadow: 0 0 35px #e4c5ff;
+}
+
+.lumi-name {
+    font-size: 17px;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+@keyframes lumiFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-35px) rotate(5deg);
+    }
+}
+
+.welcome-message,
+.hero-message,
+.final-message {
+    position: absolute;
+    opacity: 0;
+    transform: translateY(25px);
+    transition: 2s ease;
+}
+
+.welcome-message.show,
+.hero-message.show,
+.final-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.welcome-message {
+    top: 45%;
+    left: 30%;
+    padding: 20px 30px;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 20px;
+    background: rgba(20,10,60,0.65);
+    box-shadow: 0 0 30px rgba(200,160,255,0.5);
+}
+
+.welcome-message p,
+.hero-message p {
+    margin: 0 0 8px;
+    font-size: 25px;
+}
+
+.welcome-message span {
+    font-size: 17px;
+}
+
+.heroine {
+    position: absolute;
+    right: 12%;
+    bottom: 15%;
+    font-size: 150px;
+    opacity: 0;
+    transform: translateX(80px) scale(0.8);
+    transition: 4s ease;
+    text-shadow: 0 0 40px #ffb8ef;
+}
+
+.heroine.show {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    animation: heroineFloat 5s ease-in-out infinite;
+}
+
+@keyframes heroineFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.hero-message {
+    right: 25%;
+    bottom: 42%;
+    padding: 22px 35px;
+    border-radius: 22px;
+    background: rgba(30,10,70,0.7);
+    border: 1px solid rgba(255,255,255,0.6);
+    box-shadow: 0 0 35px rgba(220,170,255,0.6);
+}
+
+.final-message {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 25px);
+    text-align: center;
+}
+
+.final-message.show {
+    transform: translate(-50%, 0);
+}
+
+.final-message h2 {
+    font-size: 55px;
+    letter-spacing: 10px;
+    margin: 0;
+}
+
+.final-message p {
+    font-size: 22px;
+}
+
+.magic-orb {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(220,190,255,0.35);
+    border-radius: 50%;
+    animation: orbit 12s linear infinite;
+}
+
+.orb-one {
+    top: 30%;
+    left: 35%;
+}
+
+.orb-two {
+    bottom: 10%;
+    right: 20%;
+    animation-direction: reverse;
+}
+
+@keyframes orbit {
+    from {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1.12);
+    }
+
+    to {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+.skip-intro {
+    position: absolute;
+    right: 25px;
+    bottom: 20px;
+}
+
+.skip-intro button {
+    padding: 9px 18px;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 10px;
+    background: rgba(0,0,0,0.35);
+    color: white;
+    cursor: pointer;
+}
