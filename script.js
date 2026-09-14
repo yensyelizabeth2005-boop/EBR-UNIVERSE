@@ -12,6 +12,17 @@ function enterUniverse() {
 
     intro.remove();
     opening.style.display = "flex";
+
+    function playMusic() {
+    const music = document.getElementById("bgMusic");
+
+    if (music) {
+        music.volume = 0.45;
+        music.play().catch(error => {
+            console.log("Music waiting for user interaction.");
+        });
+    }
+}
 }
 
 function skipIntro() {
@@ -19,6 +30,7 @@ function skipIntro() {
 }
 
 function startGame() {
+    playMusic();
     startMainMenu();
 }
 
