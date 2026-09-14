@@ -137,8 +137,6 @@ body {
     animation: messageTwo 13s ease 35s forwards;
 }
 
-}
-
 .intro-message p,
 .welcome-message p {
     margin: 0;
