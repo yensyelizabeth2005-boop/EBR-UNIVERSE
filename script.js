@@ -11,8 +11,9 @@ function enterUniverse() {
 
     intro.remove();
     opening.style.display = "flex";
+}
 
-   function playMusic() {
+function playMusic() {
     const music = document.getElementById("bgMusic");
 
     if (music) {
@@ -26,7 +27,6 @@ function enterUniverse() {
                 console.log("EBR music could not start:", error);
             });
     }
-}
 }
 
 function skipIntro() {
