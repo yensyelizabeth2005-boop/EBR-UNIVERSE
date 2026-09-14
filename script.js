@@ -50,11 +50,11 @@ function showGirlIntroduction() {
                 <div class="portal-ring"></div>
                 <div class="portal-ring portal-ring-two"></div>
 
-                <img
-                    src="assets/girl-intro.png"
-                    class="intro-girl"
-                    alt="EBR Universe character"
-                />
+               <img
+    src="assets/ChatGPT%20Image%2014%20sept%202026%2C%2004_28_52%20a.m..png"
+    class="intro-girl"
+    alt="EBR Universe character"
+/>
             </div>
 
             <div class="character-dialogue">
