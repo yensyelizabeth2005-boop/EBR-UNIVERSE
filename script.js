@@ -13,14 +13,19 @@ function enterUniverse() {
     intro.remove();
     opening.style.display = "flex";
 
-    function playMusic() {
+   function playMusic() {
     const music = document.getElementById("bgMusic");
 
     if (music) {
         music.volume = 0.45;
-        music.play().catch(error => {
-            console.log("Music waiting for user interaction.");
-        });
+
+        music.play()
+            .then(() => {
+                console.log("EBR music started.");
+            })
+            .catch(error => {
+                console.log("EBR music could not start:", error);
+            });
     }
 }
 }
