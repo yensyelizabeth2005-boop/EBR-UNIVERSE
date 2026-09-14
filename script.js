@@ -1,5 +1,4 @@
 let contacts = [];
-let contacts = [];
 
 function enterUniverse() {
     const intro = document.getElementById("cinematicIntro");
@@ -48,8 +47,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 60000);
 
 });
-    startMainMenu();
-}
 
 
 function startMainMenu() {
