@@ -35,9 +35,39 @@ function skipIntro() {
 
 function startGame() {
     playMusic();
-    startMainMenu();
+    showGirlIntroduction();
 }
 
+function showGirlIntroduction() {
+    document.body.innerHTML = `
+        <section class="character-introduction girl-introduction">
+
+            <div class="magic-particles">
+                ✦ · ✧ · ⋆ · ✦ · ✧ · ⋆ · ✦
+            </div>
+
+            <div class="magic-portal">
+                <div class="portal-ring"></div>
+                <div class="portal-ring portal-ring-two"></div>
+
+                <img
+                    src="assets/girl-intro.png"
+                    class="intro-girl"
+                    alt="EBR Universe character"
+                />
+            </div>
+
+            <div class="character-dialogue">
+                <p>Welcome, would you like some help?</p>
+            </div>
+
+            <button class="character-continue" onclick="startMainMenu()">
+                CONTINUE ✦
+            </button>
+
+        </section>
+    `;
+}
 /* Intro automático de 60 segundos */
 
 document.addEventListener("DOMContentLoaded", function() {
