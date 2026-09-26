@@ -916,3 +916,327 @@ body {
         transform: translateY(-10px);
     }
 }
+
+ /* =========================================
+   EBR: UNIVERSE — VERSION 1.0
+   MAIN MENU
+========================================= */
+
+.main-menu {
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background:
+        radial-gradient(circle at top, rgba(130, 80, 190, 0.35), transparent 45%),
+        linear-gradient(180deg, #090612 0%, #120b20 50%, #05030a 100%);
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.menu-header {
+    margin-bottom: 35px;
+}
+
+.menu-header .version {
+    font-size: 14px;
+    letter-spacing: 4px;
+    opacity: 0.7;
+    margin-bottom: 12px;
+}
+
+.menu-header h1 {
+    font-size: 52px;
+    letter-spacing: 5px;
+    margin: 0;
+}
+
+.menu-header p:last-child {
+    font-size: 17px;
+    opacity: 0.75;
+    margin-top: 12px;
+}
+
+.menu-options {
+    width: min(650px, 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.menu-button {
+    width: 100%;
+    min-height: 72px;
+    padding: 14px 22px;
+    border: 1px solid rgba(220, 190, 255, 0.35);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.07);
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.menu-button span {
+    font-size: 11px;
+    letter-spacing: 2px;
+    opacity: 0.6;
+}
+
+.menu-button:hover {
+    transform: translateY(-2px);
+    background: rgba(180, 120, 255, 0.18);
+    border-color: rgba(230, 205, 255, 0.75);
+}
+
+.menu-button.active {
+    border-color: rgba(230, 205, 255, 0.8);
+    background: rgba(150, 90, 220, 0.18);
+    box-shadow: 0 0 25px rgba(160, 100, 230, 0.2);
+}
+
+.menu-footer {
+    margin-top: 35px;
+    font-size: 13px;
+    opacity: 0.5;
+}
+
+
+/* =========================================
+   EBR: READ STORIES
+========================================= */
+
+.read-stories-page,
+.story-page {
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40px 20px;
+    background:
+        radial-gradient(circle at top, rgba(130, 80, 190, 0.3), transparent 45%),
+        linear-gradient(180deg, #090612 0%, #120b20 55%, #05030a 100%);
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.read-stories-header,
+.story-page-header {
+    max-width: 850px;
+    margin: 0 auto 35px;
+    text-align: center;
+}
+
+.read-stories-header > p,
+.story-page-header > p:first-child {
+    font-size: 12px;
+    letter-spacing: 3px;
+    opacity: 0.6;
+}
+
+.read-stories-header h1,
+.story-page-header h1 {
+    font-size: 42px;
+    letter-spacing: 3px;
+    margin: 12px 0;
+}
+
+.read-stories-header span,
+.story-page-header p {
+    opacity: 0.75;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   STORY CARD
+========================================= */
+
+.story-catalog {
+    width: min(850px, 100%);
+    margin: 0 auto;
+}
+
+.story-card {
+    display: flex;
+    gap: 25px;
+    padding: 25px;
+    border-radius: 22px;
+    border: 1px solid rgba(220, 190, 255, 0.3);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
+}
+
+.story-cover {
+    width: 190px;
+    min-width: 190px;
+    height: 270px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 75px;
+    background:
+        radial-gradient(circle, rgba(220, 150, 255, 0.35), transparent 55%),
+        linear-gradient(145deg, #29133f, #0d0715);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.story-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.story-info h2 {
+    font-size: 30px;
+    margin-top: 0;
+}
+
+.story-info p {
+    line-height: 1.7;
+    opacity: 0.75;
+}
+
+.story-season {
+    font-size: 12px;
+    letter-spacing: 2px;
+    opacity: 0.55 !important;
+}
+
+.story-info button,
+.back-button,
+.chapter-list button {
+    border: 1px solid rgba(220, 190, 255, 0.45);
+    border-radius: 12px;
+    background: rgba(150, 90, 220, 0.18);
+    color: white;
+    padding: 14px 22px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.story-info button {
+    margin-top: 15px;
+    width: 100%;
+}
+
+.story-info button:hover,
+.back-button:hover,
+.chapter-list button:hover {
+    background: rgba(180, 120, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   SEASON / CHAPTERS
+========================================= */
+
+.season-section {
+    width: min(700px, 100%);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.season-section h2 {
+    font-size: 30px;
+    letter-spacing: 3px;
+}
+
+.season-section > p {
+    opacity: 0.55;
+    letter-spacing: 2px;
+}
+
+.chapter-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.chapter-list button {
+    width: 100%;
+    min-height: 60px;
+}
+
+.back-button {
+    display: block;
+    margin: 35px auto 0;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .main-menu {
+        padding: 35px 16px;
+    }
+
+    .menu-header h1 {
+        font-size: 34px;
+        letter-spacing: 3px;
+    }
+
+    .menu-button {
+        min-height: 68px;
+        font-size: 16px;
+    }
+
+    .read-stories-page,
+    .story-page {
+        padding: 30px 15px;
+    }
+
+    .read-stories-header h1,
+    .story-page-header h1 {
+        font-size: 30px;
+    }
+
+    .story-card {
+        flex-direction: column;
+        align-items: center;
+        padding: 18px;
+    }
+
+    .story-cover {
+        width: 170px;
+        min-width: 170px;
+        height: 230px;
+    }
+
+    .story-info {
+        width: 100%;
+        text-align: center;
+    }
+
+    .story-info h2 {
+        font-size: 24px;
+    }
+
+    .story-info button {
+        width: 100%;
+    }
+
+    .chapter-list button {
+        min-height: 62px;
+        font-size: 16px;
+    }
+}
