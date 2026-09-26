@@ -1021,4 +1021,68 @@ function openStory(storyId) {
 
         </main>
     `;
+} 
+ function showStoriesCatalog() {
+
+    document.body.innerHTML = `
+        <main class="stories-catalog-page">
+
+            <header class="stories-catalog-header">
+                <p class="stories-brand">EBR: UNIVERSE</p>
+
+                <h1>📖 READ STORIES</h1>
+
+                <p class="stories-subtitle">
+                    Choose a story and enter its universe.
+                </p>
+            </header>
+
+            <section class="stories-grid">
+
+                <article class="story-card">
+
+                    <div class="story-card-cover">
+                        🌹
+                    </div>
+
+                    <div class="story-card-content">
+
+                        <p class="story-label">
+                            ORIGINAL STORY
+                        </p>
+
+                        <h2>THE FIRST STORY</h2>
+
+                        <p class="story-description">
+                            A new universe is waiting for you.
+                            Meet new characters, discover secrets
+                            and begin a story that is only yours to experience.
+                        </p>
+
+                        <div class="story-details">
+                            <span>SEASON 1</span>
+                            <span>·</span>
+                            <span>5 CHAPTERS</span>
+                        </div>
+
+                        <button
+                            class="story-read-button"
+                            onclick="openStory('first-story')">
+                            READ STORY ✦
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+            <button
+                class="back-button stories-back"
+                onclick="startMainMenu()">
+                ← BACK
+            </button>
+
+        </main>
+    `;
 }
