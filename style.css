@@ -1240,3 +1240,148 @@ body {
         font-size: 16px;
     }
 }
+  /* =========================================
+   EBR: READ STORIES — LOADING SCREEN
+========================================= */
+
+.read-stories-loading {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+}
+
+.read-stories-loading-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    animation: loadingImageZoom 3s ease-in-out forwards;
+}
+
+.loading-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.28);
+    text-align: center;
+}
+
+.loading-content {
+    width: min(90%, 600px);
+    padding: 30px 25px;
+    border-radius: 28px;
+    background: rgba(15, 10, 25, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.15);
+    animation: loadingContentAppear 1s ease-out;
+}
+
+.loading-brand {
+    margin: 0 0 8px;
+    font-size: 13px;
+    letter-spacing: 4px;
+    opacity: 0.85;
+}
+
+.loading-content h1 {
+    margin: 0 0 18px;
+    font-size: clamp(30px, 6vw, 55px);
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+.loading-text {
+    margin: 0 0 18px;
+    font-size: 14px;
+    letter-spacing: 3px;
+}
+
+.loading-bar {
+    width: 100%;
+    height: 7px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.22);
+}
+
+.loading-progress {
+    width: 0%;
+    height: 100%;
+    border-radius: 20px;
+    background: white;
+    animation: loadingProgress 3s linear forwards;
+}
+
+.loading-chapter {
+    margin: 15px 0 0;
+    font-size: 11px;
+    letter-spacing: 3px;
+    opacity: 0.75;
+}
+
+@keyframes loadingProgress {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes loadingImageZoom {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.06);
+    }
+}
+
+@keyframes loadingContentAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .loading-overlay {
+        padding: 15px;
+    }
+
+    .loading-content {
+        width: 92%;
+        padding: 25px 18px;
+        border-radius: 22px;
+    }
+
+    .loading-content h1 {
+        font-size: 30px;
+    }
+
+    .loading-text {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .loading-brand {
+        font-size: 10px;
+    }
+}
