@@ -1101,50 +1101,54 @@ function openStory(storyId) {
     }
 
     const chapters = {
+
         1: {
             title: "A NEW BEGINNING",
+            background: "assets/chapter1-bedroom.png",
+            character: "assets/characters/elizabeth-neutral.png",
+            characterName: "ELIZABETH",
             text: `
                 The night was unusually quiet.
 
-                Beyond the window, thousands of lights
-                illuminated a city that never seemed to sleep.
+                Beyond the window, thousands of lights illuminated a city that never seemed to sleep.
 
-                She opened her eyes and looked around.
+                I opened my eyes and looked around.
 
                 Everything felt familiar...
 
                 and yet, somehow, completely different.
 
-                A strange feeling told her that tonight
-                was the beginning of something she could
-                never turn back from.
+                A strange feeling told me that tonight was the beginning of something I could never turn back from.
             `
         },
 
         2: {
             title: "THE UNKNOWN",
+            background: "assets/chapter1-morning.png",
+            character: "assets/characters/elizabeth-surprised.png",
+            characterName: "ELIZABETH",
             text: `
                 The next morning, something had changed.
 
-                A mysterious message appeared on her phone.
+                A mysterious message appeared on my phone.
 
-                She stared at the screen, wondering who
-                could have sent it.
+                I stared at the screen, wondering who could have sent it.
 
                 There was only one sentence:
 
-                "Your story has already begun."
+                Your story has already begun.
             `
         },
 
         3: {
             title: "THE SECRET",
+            background: "assets/chapter1-secret.png",
+            character: "assets/characters/elizabeth-curious.png",
+            characterName: "ELIZABETH",
             text: `
-                She followed the mysterious clues
-                and discovered something hidden
-                beneath the surface of her world.
+                I followed the mysterious clues and discovered something hidden beneath the surface of my world.
 
-                Someone had been waiting for her.
+                Someone had been waiting for me.
 
                 But why?
             `
@@ -1152,12 +1156,13 @@ function openStory(storyId) {
 
         4: {
             title: "THE CHOICE",
+            background: "assets/chapter1-choice.png",
+            character: "assets/characters/elizabeth-serious.png",
+            characterName: "ELIZABETH",
             text: `
-                Every answer seemed to create
-                another question.
+                Every answer seemed to create another question.
 
-                She finally realized that the path
-                ahead would depend on a choice.
+                I finally realized that the path ahead would depend on a choice.
 
                 There was no going back now.
             `
@@ -1165,9 +1170,11 @@ function openStory(storyId) {
 
         5: {
             title: "THE BEGINNING OF EVERYTHING",
+            background: "assets/chapter1-ending.png",
+            character: "assets/characters/elizabeth-emotional.png",
+            characterName: "ELIZABETH",
             text: `
-                The first chapter of her new life
-                had reached its end.
+                The first chapter of my new life had reached its end.
 
                 But this was not the end of the story.
 
@@ -1179,48 +1186,109 @@ function openStory(storyId) {
     const chapter = chapters[chapterNumber];
 
     document.body.innerHTML = `
-        <main class="chapter-reading-page">
 
-            <div class="chapter-reading-header">
+        <main
+            class="visual-novel"
+            style="--scene-background: url('${chapter.background}')"
+        >
 
-                <p>EBR: READ STORIES</p>
+            <div class="scene-background"></div>
 
-                <span>THE FIRST STORY · SEASON 1</span>
+            <div class="scene-glow"></div>
 
-                <h1>CHAPTER ${chapterNumber}</h1>
+            <div class="scene-particles">
+                ✦　·　✧　·　⋆　·　✦　·　✧
+            </div>
 
-                <h2>${chapter.title}</h2>
+            <header class="visual-novel-header">
+
+                <div>
+                    <p>EBR ✦ UNIVERSE</p>
+                    <span>THE FIRST STORY · SEASON 1</span>
+                </div>
+
+                <div class="visual-novel-icons">
+                    <button>☰</button>
+                    <button>♡</button>
+                    <button>⚙</button>
+                </div>
+
+            </header>
+
+            <div class="scene-location">
+                ✦ MY ROOM · 10:42 PM
+            </div>
+
+            <div class="character-layer">
+
+                <img
+                    src="${chapter.character}"
+                    class="visual-novel-character"
+                    alt="${chapter.characterName}"
+                >
 
             </div>
 
-            <article class="chapter-text">
-                ${chapter.text
-                    .trim()
-                    .split("\n\n")
-                    .map(paragraph => `<p>${paragraph.trim()}</p>`)
-                    .join("")}
-            </article>
+            <section class="visual-novel-dialogue">
 
-            <div class="chapter-navigation">
+                <div class="character-name">
+                    ✦ ${chapter.characterName}
+                </div>
 
-                ${
-                    chapterNumber > 1
-                    ? `<button onclick="openChapter(${chapterNumber - 1})">
-                        ← PREVIOUS
-                       </button>`
-                    : ""
-                }
+                <div class="dialogue-text">
 
-                ${
-                    chapterNumber < 5
-                    ? `<button onclick="openChapter(${chapterNumber + 1})">
-                        NEXT CHAPTER →
-                       </button>`
-                    : `<button onclick="openStory('first-story')">
-                        BACK TO CHAPTERS
-                       </button>`
-                }
+                    ${chapter.text
+                        .trim()
+                        .split("\n\n")
+                        .map(paragraph =>
+                            `<p>${paragraph.trim()}</p>`
+                        )
+                        .join("")}
 
+                </div>
+
+                <div class="dialogue-controls">
+
+                    ${
+                        chapterNumber > 1
+                        ? `
+                            <button
+                                onclick="openChapter(${chapterNumber - 1})">
+                                ←
+                            </button>
+                        `
+                        : `<span></span>`
+                    }
+
+                    ${
+                        chapterNumber < 5
+                        ? `
+                            <button
+                                class="next-button"
+                                onclick="openChapter(${chapterNumber + 1})">
+                                NEXT →
+                            </button>
+                        `
+                        : `
+                            <button
+                                class="next-button"
+                                onclick="openStory('first-story')">
+                                CHAPTERS
+                            </button>
+                        `
+                    }
+
+                </div>
+
+            </section>
+
+            <div class="chapter-progress">
+                ✦ ${chapterNumber} / 5
+                <div class="progress-line">
+                    <div
+                        style="width:${chapterNumber * 20}%">
+                    </div>
+                </div>
             </div>
 
         </main>
