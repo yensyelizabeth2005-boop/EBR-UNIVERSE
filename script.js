@@ -915,37 +915,55 @@ function publishReply() {
 }
 
 
-function openCharacter(index) {
-    let characters = JSON.parse(localStorage.getItem("characters")) || [];
-    let character = characters[index];
-
-    if (!character) {
-        alert("Character not found.");
-        return;
-    } 
-    localStorage.setItem("currentCharacter", index);
-
+function openReadStories() {
     document.body.innerHTML = `
-        <h1>👤 ${character.name}</h1>
+        <main class="read-stories-page">
 
-        <h2>${character.age} years old</h2>
+            <div class="read-stories-header">
+                <p>EBR: UNIVERSE</p>
+                <h1>📖 READ STORIES</h1>
+                <span>Choose a story and enter its universe.</span>
+            </div>
 
-        <h3>Personality</h3>
-        <p>${character.personality}</p>
+            <section class="story-catalog">
 
-        <h3>Appearance</h3>
-        <p>${character.appearance}</p>
+                <article class="story-card">
+                    <div class="story-cover">
+                        🌹
+                    </div>
 
-        <h3>Backstory</h3>
-        <p>${character.backstory}</p>
+                    <div class="story-info">
+                        <h2>THE FIRST STORY</h2>
 
-        <br>
+                        <p>
+                            Enter a new universe where every story
+                            has its own characters, secrets and destiny.
+                        </p>
 
-        <button onclick="openChat()">💬 CHAT</button>
-        <button onclick="openPhone()">📱 PHONE</button>
+                        <p class="story-season">
+                            SEASON 1 · 5 CHAPTERS
+                        </p>
 
-        <br><br>
+                        <button onclick="openStory('first-story')">
+                            READ STORY ✦
+                        </button>
+                    </div>
+                </article>
 
-        <button onclick="openMyStories()">← MY STORIES</button>
+            </section>
+
+            <button class="back-button" onclick="startMainMenu()">
+                ← BACK
+            </button>
+
+        </main>
     `;
+}
+
+ function showComingSoon(feature) {
+    alert(
+        feature +
+        "\n\nCOMING SOON ✦\n\n" +
+        "This experience is currently being developed for a future EBR: UNIVERSE update."
+    );
 }
