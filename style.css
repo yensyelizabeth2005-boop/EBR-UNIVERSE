@@ -1788,3 +1788,527 @@ body {
         font-size: 13px;
     }
 }
+
+/* =========================================
+   EBR VISUAL NOVEL SYSTEM
+========================================= */
+
+.visual-novel {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+
+    background: #080711;
+    color: white;
+}
+
+/* MOVING BACKGROUND */
+
+.scene-background {
+    position: absolute;
+    inset: -5%;
+
+    background-image: var(--scene-background);
+    background-size: cover;
+    background-position: center;
+
+    animation:
+        sceneZoom 14s ease-in-out infinite alternate,
+        sceneMove 18s ease-in-out infinite alternate;
+
+    z-index: 0;
+}
+
+@keyframes sceneZoom {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.08);
+    }
+
+}
+
+@keyframes sceneMove {
+
+    from {
+        background-position: 48% 50%;
+    }
+
+    to {
+        background-position: 52% 47%;
+    }
+
+}
+
+/* DARK CINEMATIC OVERLAY */
+
+.scene-glow {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(190, 150, 255, 0.10),
+            transparent 40%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,0.12),
+            rgba(0,0,0,0.30)
+        );
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+/* FLOATING PARTICLES */
+
+.scene-particles {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+    letter-spacing: 30px;
+
+    opacity: 0.35;
+
+    animation: particlesFloat 7s ease-in-out infinite;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+@keyframes particlesFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.25;
+    }
+
+    50% {
+        transform: translateY(-20px);
+        opacity: 0.55;
+    }
+
+}
+
+/* HEADER */
+
+.visual-novel-header {
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    right: 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 10;
+}
+
+.visual-novel-header p {
+    margin: 0;
+
+    font-size: 18px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.visual-novel-header span {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 11px;
+    letter-spacing: 3px;
+
+    opacity: 0.75;
+}
+
+.visual-novel-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.visual-novel-icons button {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    background: rgba(10,8,25,0.45);
+
+    color: white;
+
+    font-size: 20px;
+
+    backdrop-filter: blur(10px);
+
+    cursor: pointer;
+}
+
+/* LOCATION */
+
+.scene-location {
+    position: absolute;
+
+    top: 110px;
+    right: 30px;
+
+    padding: 12px 20px;
+
+    border-radius: 20px;
+
+    background: rgba(15,10,35,0.55);
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    font-size: 12px;
+    letter-spacing: 2px;
+
+    backdrop-filter: blur(10px);
+
+    z-index: 8;
+}
+
+/* CHARACTER */
+
+.character-layer {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: center;
+
+    z-index: 4;
+
+    pointer-events: none;
+}
+
+.visual-novel-character {
+    height: 88%;
+    max-width: 75%;
+
+    object-fit: contain;
+
+    object-position: bottom center;
+
+    filter:
+        drop-shadow(
+            0 15px 35px rgba(0,0,0,0.45)
+        );
+
+    animation: characterAppear 0.8s ease-out,
+               characterBreathing 5s ease-in-out infinite;
+}
+
+@keyframes characterAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+@keyframes characterBreathing {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+}
+
+/* DIALOGUE */
+
+.visual-novel-dialogue {
+    position: absolute;
+
+    left: 6%;
+    right: 6%;
+    bottom: 7%;
+
+    padding: 30px 40px 25px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(12,8,30,0.90),
+            rgba(22,14,45,0.78)
+        );
+
+    border: 1px solid rgba(210,190,255,0.35);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.55),
+        inset 0 0 35px rgba(190,150,255,0.05);
+
+    backdrop-filter: blur(14px);
+
+    z-index: 9;
+}
+
+/* CHARACTER NAME */
+
+.character-name {
+    position: absolute;
+
+    top: -24px;
+    left: 35px;
+
+    padding: 12px 30px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(80,50,160,0.95),
+            rgba(150,90,220,0.90)
+        );
+
+    border: 1px solid rgba(255,255,255,0.30);
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    box-shadow:
+        0 8px 25px rgba(100,60,200,0.25);
+}
+
+/* TEXT */
+
+.dialogue-text {
+    max-height: 230px;
+
+    overflow-y: auto;
+
+    padding-right: 10px;
+}
+
+.dialogue-text p {
+    margin: 0 0 15px;
+
+    font-size: clamp(19px, 2.2vw, 25px);
+
+    line-height: 1.7;
+
+    letter-spacing: 0.3px;
+
+    color: rgba(255,255,255,0.96);
+}
+
+.dialogue-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* CONTROLS */
+
+.dialogue-controls {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 20px;
+}
+
+.dialogue-controls button {
+    min-width: 55px;
+    min-height: 48px;
+
+    padding: 10px 22px;
+
+    border-radius: 25px;
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    background: rgba(255,255,255,0.10);
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.dialogue-controls button:hover {
+    transform: translateY(-3px);
+
+    background: rgba(255,255,255,0.18);
+
+    box-shadow:
+        0 8px 25px rgba(180,130,255,0.20);
+}
+
+.dialogue-controls .next-button {
+    padding-left: 30px;
+    padding-right: 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(100,70,190,0.8),
+            rgba(160,100,230,0.8)
+        );
+}
+
+/* PROGRESS */
+
+.chapter-progress {
+    position: absolute;
+
+    left: 30px;
+    bottom: 25px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    z-index: 10;
+}
+
+.progress-line {
+    width: 180px;
+    height: 4px;
+
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.18);
+
+    overflow: hidden;
+}
+
+.progress-line div {
+    height: 100%;
+
+    border-radius: 10px;
+
+    background: white;
+
+    transition: width 0.5s ease;
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .visual-novel-header {
+        top: 15px;
+        left: 15px;
+        right: 15px;
+    }
+
+    .visual-novel-header p {
+        font-size: 13px;
+    }
+
+    .visual-novel-header span {
+        font-size: 8px;
+    }
+
+    .visual-novel-icons button {
+        width: 38px;
+        height: 38px;
+        font-size: 15px;
+    }
+
+    .scene-location {
+        top: 75px;
+        right: 15px;
+
+        font-size: 9px;
+
+        padding: 8px 12px;
+    }
+
+    .visual-novel-character {
+        height: 72%;
+        max-width: 95%;
+    }
+
+    .visual-novel-dialogue {
+        left: 4%;
+        right: 4%;
+        bottom: 6%;
+
+        padding: 28px 20px 18px;
+
+        border-radius: 22px;
+    }
+
+    .character-name {
+        left: 20px;
+
+        top: -21px;
+
+        padding: 9px 20px;
+
+        font-size: 13px;
+    }
+
+    .dialogue-text {
+        max-height: 170px;
+    }
+
+    .dialogue-text p {
+        font-size: 18px;
+        line-height: 1.65;
+    }
+
+    .dialogue-controls button {
+        min-height: 45px;
+        font-size: 12px;
+    }
+
+    .chapter-progress {
+        left: 15px;
+        bottom: 12px;
+        font-size: 10px;
+    }
+
+    .progress-line {
+        width: 90px;
+    }
+}
