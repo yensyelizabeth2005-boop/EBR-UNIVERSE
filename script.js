@@ -967,3 +967,62 @@ function openReadStories() {
         "This experience is currently being developed for a future EBR: UNIVERSE update."
     );
 }
+
+function openStory(storyId) {
+
+    if (storyId !== "first-story") {
+        alert("Story not found.");
+        return;
+    }
+
+    document.body.innerHTML = `
+        <main class="story-page">
+
+            <div class="story-page-header">
+                <p>EBR: READ STORIES</p>
+                <h1>THE FIRST STORY</h1>
+
+                <p>
+                    A new universe is waiting for you.
+                    Enter the story and discover what happens next.
+                </p>
+            </div>
+
+            <section class="season-section">
+
+                <h2>SEASON 1</h2>
+                <p>5 CHAPTERS</p>
+
+                <div class="chapter-list">
+
+                    <button onclick="openChapter(1)">
+                        CHAPTER 1
+                    </button>
+
+                    <button onclick="openChapter(2)">
+                        CHAPTER 2
+                    </button>
+
+                    <button onclick="openChapter(3)">
+                        CHAPTER 3
+                    </button>
+
+                    <button onclick="openChapter(4)">
+                        CHAPTER 4
+                    </button>
+
+                    <button onclick="openChapter(5)">
+                        CHAPTER 5
+                    </button>
+
+                </div>
+
+            </section>
+
+            <button class="back-button" onclick="openReadStories()">
+                ← BACK TO STORIES
+            </button>
+
+        </main>
+    `;
+}
