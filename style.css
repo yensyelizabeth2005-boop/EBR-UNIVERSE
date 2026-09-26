@@ -1568,3 +1568,223 @@ body {
         padding: 15px;
     }
 }
+
+ /* =========================================
+   EBR: READ STORIES — VISUAL NOVEL READER
+========================================= */
+
+.chapter-reading-page {
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 55px 25px 100px;
+
+    background:
+        radial-gradient(
+            circle at 20% 15%,
+            rgba(170, 120, 255, 0.22),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(255, 150, 220, 0.16),
+            transparent 38%
+        ),
+        linear-gradient(
+            180deg,
+            #090711 0%,
+            #120d20 50%,
+            #080711 100%
+        );
+
+    color: white;
+}
+
+/* ---------- HEADER ---------- */
+
+.chapter-reading-header {
+    width: min(100%, 900px);
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.chapter-reading-header p {
+    margin: 0 0 12px;
+    font-size: 15px;
+    letter-spacing: 4px;
+    opacity: 0.65;
+}
+
+.chapter-reading-header span {
+    display: block;
+    margin-bottom: 20px;
+
+    font-size: 14px;
+    letter-spacing: 3px;
+    opacity: 0.55;
+}
+
+.chapter-reading-header h1 {
+    margin: 0;
+
+    font-size: clamp(42px, 7vw, 72px);
+    letter-spacing: 5px;
+    line-height: 1.1;
+
+    text-shadow:
+        0 0 20px rgba(255, 255, 255, 0.18);
+}
+
+.chapter-reading-header h2 {
+    margin: 18px 0 0;
+
+    font-size: clamp(25px, 4vw, 42px);
+    letter-spacing: 2px;
+
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* ---------- STORY TEXT ---------- */
+
+.chapter-text {
+    width: min(100%, 820px);
+    margin: 0 auto;
+
+    padding: 45px 50px;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.10),
+            rgba(255, 255, 255, 0.045)
+        );
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.45),
+        inset 0 0 40px rgba(255, 255, 255, 0.025);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.chapter-text p {
+    margin: 0 0 30px;
+
+    font-size: clamp(20px, 2.2vw, 26px);
+    line-height: 1.9;
+
+    letter-spacing: 0.3px;
+
+    color: rgba(255, 255, 255, 0.94);
+
+    text-align: left;
+}
+
+.chapter-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* ---------- NAVIGATION ---------- */
+
+.chapter-navigation {
+    width: min(100%, 820px);
+    margin: 35px auto 0;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.chapter-navigation button {
+    min-height: 55px;
+
+    padding: 15px 28px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.10);
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.chapter-navigation button:hover {
+    transform: translateY(-3px);
+
+    background: rgba(255, 255, 255, 0.18);
+
+    box-shadow:
+        0 10px 30px rgba(255, 180, 240, 0.16);
+}
+
+.chapter-navigation button:active {
+    transform: translateY(0);
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 650px) {
+
+    .chapter-reading-page {
+        padding: 35px 15px 70px;
+    }
+
+    .chapter-reading-header {
+        margin-bottom: 30px;
+    }
+
+    .chapter-reading-header p {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .chapter-reading-header span {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .chapter-reading-header h1 {
+        font-size: 42px;
+    }
+
+    .chapter-reading-header h2 {
+        font-size: 25px;
+    }
+
+    .chapter-text {
+        padding: 30px 22px;
+        border-radius: 22px;
+    }
+
+    .chapter-text p {
+        font-size: 20px;
+        line-height: 1.8;
+        margin-bottom: 25px;
+    }
+
+    .chapter-navigation {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .chapter-navigation button {
+        width: 100%;
+        min-height: 54px;
+        font-size: 13px;
+    }
+}
