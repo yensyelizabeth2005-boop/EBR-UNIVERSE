@@ -975,18 +975,22 @@ function openStory(storyId) {
         <main class="story-page">
 
             <div class="story-page-header">
+
                 <p>EBR: READ STORIES</p>
+
                 <h1>THE FIRST STORY</h1>
 
                 <p>
                     A new universe is waiting for you.
                     Enter the story and discover what happens next.
                 </p>
+
             </div>
 
             <section class="season-section">
 
                 <h2>SEASON 1</h2>
+
                 <p>5 CHAPTERS</p>
 
                 <div class="chapter-list">
@@ -1015,13 +1019,15 @@ function openStory(storyId) {
 
             </section>
 
-            <button class="back-button" onclick="openReadStories()">
+            <button
+                class="back-button"
+                onclick="showStoriesCatalog()">
                 ← BACK TO STORIES
             </button>
 
         </main>
     `;
-} 
+}
  function showStoriesCatalog() {
 
     document.body.innerHTML = `
