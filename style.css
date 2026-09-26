@@ -1385,3 +1385,186 @@ body {
         font-size: 10px;
     }
 }
+  /* =========================================
+   EBR: READ STORIES — STORY CATALOG
+========================================= */
+
+.stories-catalog-page {
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 50px 25px 90px;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(180, 120, 255, 0.18), transparent 35%),
+        radial-gradient(circle at 80% 70%, rgba(255, 150, 220, 0.12), transparent 35%),
+        #090711;
+    color: white;
+}
+
+.stories-catalog-header {
+    max-width: 1000px;
+    margin: 0 auto 35px;
+    text-align: center;
+}
+
+.stories-brand {
+    margin: 0 0 10px;
+    font-size: 12px;
+    letter-spacing: 4px;
+    opacity: 0.7;
+}
+
+.stories-catalog-header h1 {
+    margin: 0;
+    font-size: clamp(32px, 6vw, 58px);
+    letter-spacing: 3px;
+}
+
+.stories-subtitle {
+    margin-top: 12px;
+    font-size: 15px;
+    opacity: 0.75;
+}
+
+.stories-grid {
+    width: min(100%, 900px);
+    margin: 0 auto;
+}
+
+.story-card {
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+    min-height: 360px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.story-card-cover {
+    width: 42%;
+    min-height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 100px;
+    background:
+        radial-gradient(circle, rgba(255, 170, 220, 0.3), transparent 45%),
+        linear-gradient(145deg, #24152f, #100b1d);
+}
+
+.story-card-content {
+    flex: 1;
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.story-label {
+    margin: 0 0 10px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    opacity: 0.65;
+}
+
+.story-card-content h2 {
+    margin: 0 0 18px;
+    font-size: clamp(25px, 4vw, 40px);
+    letter-spacing: 2px;
+}
+
+.story-description {
+    margin: 0;
+    max-width: 550px;
+    line-height: 1.7;
+    font-size: 15px;
+    opacity: 0.8;
+}
+
+.story-details {
+    display: flex;
+    gap: 10px;
+    margin: 25px 0;
+    font-size: 11px;
+    letter-spacing: 2px;
+    opacity: 0.7;
+}
+
+.story-read-button {
+    width: fit-content;
+    padding: 14px 28px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.story-read-button:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(255, 180, 240, 0.18);
+}
+
+.stories-back {
+    display: block;
+    margin: 35px auto 0;
+}
+
+/* 📱 PHONE */
+
+@media (max-width: 650px) {
+
+    .stories-catalog-page {
+        padding: 35px 16px 70px;
+    }
+
+    .stories-catalog-header {
+        margin-bottom: 25px;
+    }
+
+    .stories-catalog-header h1 {
+        font-size: 31px;
+    }
+
+    .stories-subtitle {
+        font-size: 13px;
+    }
+
+    .story-card {
+        flex-direction: column;
+        min-height: auto;
+        border-radius: 22px;
+    }
+
+    .story-card-cover {
+        width: 100%;
+        min-height: 190px;
+        font-size: 70px;
+    }
+
+    .story-card-content {
+        padding: 28px 22px;
+    }
+
+    .story-card-content h2 {
+        font-size: 27px;
+    }
+
+    .story-description {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .story-read-button {
+        width: 100%;
+        padding: 15px;
+    }
+}
