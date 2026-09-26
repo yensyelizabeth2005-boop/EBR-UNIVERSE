@@ -1092,3 +1092,137 @@ function openStory(storyId) {
         </main>
     `;
 }
+
+ function openChapter(chapterNumber) {
+
+    if (chapterNumber < 1 || chapterNumber > 5) {
+        alert("Chapter not found.");
+        return;
+    }
+
+    const chapters = {
+        1: {
+            title: "A NEW BEGINNING",
+            text: `
+                The night was unusually quiet.
+
+                Beyond the window, thousands of lights
+                illuminated a city that never seemed to sleep.
+
+                She opened her eyes and looked around.
+
+                Everything felt familiar...
+
+                and yet, somehow, completely different.
+
+                A strange feeling told her that tonight
+                was the beginning of something she could
+                never turn back from.
+            `
+        },
+
+        2: {
+            title: "THE UNKNOWN",
+            text: `
+                The next morning, something had changed.
+
+                A mysterious message appeared on her phone.
+
+                She stared at the screen, wondering who
+                could have sent it.
+
+                There was only one sentence:
+
+                "Your story has already begun."
+            `
+        },
+
+        3: {
+            title: "THE SECRET",
+            text: `
+                She followed the mysterious clues
+                and discovered something hidden
+                beneath the surface of her world.
+
+                Someone had been waiting for her.
+
+                But why?
+            `
+        },
+
+        4: {
+            title: "THE CHOICE",
+            text: `
+                Every answer seemed to create
+                another question.
+
+                She finally realized that the path
+                ahead would depend on a choice.
+
+                There was no going back now.
+            `
+        },
+
+        5: {
+            title: "THE BEGINNING OF EVERYTHING",
+            text: `
+                The first chapter of her new life
+                had reached its end.
+
+                But this was not the end of the story.
+
+                It was only the beginning.
+            `
+        }
+    };
+
+    const chapter = chapters[chapterNumber];
+
+    document.body.innerHTML = `
+        <main class="chapter-reading-page">
+
+            <div class="chapter-reading-header">
+
+                <p>EBR: READ STORIES</p>
+
+                <span>THE FIRST STORY · SEASON 1</span>
+
+                <h1>CHAPTER ${chapterNumber}</h1>
+
+                <h2>${chapter.title}</h2>
+
+            </div>
+
+            <article class="chapter-text">
+                ${chapter.text
+                    .trim()
+                    .split("\n\n")
+                    .map(paragraph => `<p>${paragraph.trim()}</p>`)
+                    .join("")}
+            </article>
+
+            <div class="chapter-navigation">
+
+                ${
+                    chapterNumber > 1
+                    ? `<button onclick="openChapter(${chapterNumber - 1})">
+                        ← PREVIOUS
+                       </button>`
+                    : ""
+                }
+
+                ${
+                    chapterNumber < 5
+                    ? `<button onclick="openChapter(${chapterNumber + 1})">
+                        NEXT CHAPTER →
+                       </button>`
+                    : `<button onclick="openStory('first-story')">
+                        BACK TO CHAPTERS
+                       </button>`
+                }
+
+            </div>
+
+        </main>
+    `;
+}
