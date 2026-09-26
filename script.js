@@ -81,19 +81,71 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function startMainMenu() {
     document.body.innerHTML = `
-        <div class="main-menu">
+        <main class="main-menu">
 
-            <h1>EBR: UNIVERSE</h1>
+            <div class="menu-header">
+                <p class="version">VERSION 1.0</p>
+                <h1>EBR: UNIVERSE</h1>
+                <p>Welcome to your universe.</p>
+            </div>
 
-            <p>Welcome to your universe.</p>
+            <section class="menu-options">
 
-            <button onclick="createUniverse()">CREATE UNIVERSE</button>
+                <button class="menu-button active"
+                    onclick="openReadStories()">
+                    📖 READ STORIES
+                    <span>AVAILABLE NOW</span>
+                </button>
 
-            <button onclick="openMyStories()">MY STORIES</button>
+                <button class="menu-button"
+                    onclick="showComingSoon('CREATE UNIVERSE')">
+                    🌌 CREATE UNIVERSE
+                    <span>COMING SOON</span>
+                </button>
 
-            <button onclick="openSettings()">SETTINGS</button>
+                <button class="menu-button"
+                    onclick="showComingSoon('CHARACTERS')">
+                    👤 CHARACTERS
+                    <span>COMING SOON</span>
+                </button>
 
-        </div>
+                <button class="menu-button"
+                    onclick="showComingSoon('CHAT')">
+                    💬 CHAT
+                    <span>COMING SOON</span>
+                </button>
+
+                <button class="menu-button"
+                    onclick="showComingSoon('MY PHONE')">
+                    📱 MY PHONE
+                    <span>COMING SOON</span>
+                </button>
+
+                <button class="menu-button"
+                    onclick="showComingSoon('SOCIAL')">
+                    🌐 SOCIAL
+                    <span>COMING SOON</span>
+                </button>
+
+                <button class="menu-button"
+                    onclick="showComingSoon('GROUP CHATS')">
+                    👥 GROUP CHATS
+                    <span>COMING SOON</span>
+                </button>
+
+                <button class="menu-button"
+                    onclick="showComingSoon('AI EXPERIENCES')">
+                    ✨ AI EXPERIENCES
+                    <span>COMING SOON</span>
+                </button>
+
+            </section>
+
+            <p class="menu-footer">
+                More experiences are coming to EBR: UNIVERSE.
+            </p>
+
+        </main>
     `;
 }
 
