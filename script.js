@@ -916,48 +916,44 @@ function publishReply() {
 
 
 function openReadStories() {
+
     document.body.innerHTML = `
-        <main class="read-stories-page">
+        <main class="read-stories-loading">
 
-            <div class="read-stories-header">
-                <p>EBR: UNIVERSE</p>
-                <h1>📖 READ STORIES</h1>
-                <span>Choose a story and enter its universe.</span>
+            <img
+                src="assets/read-stories-loading.png"
+                alt="EBR Read Stories"
+                class="read-stories-loading-image"
+            >
+
+            <div class="loading-overlay">
+                <div class="loading-content">
+
+                    <p class="loading-brand">EBR: UNIVERSE</p>
+
+                    <h1>📖 READ STORIES</h1>
+
+                    <p class="loading-text">
+                        ENTERING THE UNIVERSE...
+                    </p>
+
+                    <div class="loading-bar">
+                        <div class="loading-progress"></div>
+                    </div>
+
+                    <p class="loading-chapter">
+                        LOADING STORY...
+                    </p>
+
+                </div>
             </div>
-
-            <section class="story-catalog">
-
-                <article class="story-card">
-                    <div class="story-cover">
-                        🌹
-                    </div>
-
-                    <div class="story-info">
-                        <h2>THE FIRST STORY</h2>
-
-                        <p>
-                            Enter a new universe where every story
-                            has its own characters, secrets and destiny.
-                        </p>
-
-                        <p class="story-season">
-                            SEASON 1 · 5 CHAPTERS
-                        </p>
-
-                        <button onclick="openStory('first-story')">
-                            READ STORY ✦
-                        </button>
-                    </div>
-                </article>
-
-            </section>
-
-            <button class="back-button" onclick="startMainMenu()">
-                ← BACK
-            </button>
 
         </main>
     `;
+
+    setTimeout(() => {
+        showStoriesCatalog();
+    }, 3000);
 }
 
  function showComingSoon(feature) {
