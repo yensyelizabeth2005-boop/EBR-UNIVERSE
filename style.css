@@ -2306,3 +2306,66 @@ body {
         width: 90px;
     }
 }
+
+ .character-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.character-slot {
+    position: absolute;
+    bottom: 8%;
+    height: 82%;
+    width: 45%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+.character-left {
+    left: 3%;
+}
+
+.character-right {
+    right: 3%;
+}
+
+.character-slot .visual-novel-character {
+    height: 100%;
+    max-width: 100%;
+}
+
+.active-character {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1);
+}
+
+.inactive-character {
+    opacity: 0.45;
+    transform: scale(0.94);
+    filter: brightness(0.55);
+}
+
+.mysterious-character {
+    width: 260px;
+    height: 520px;
+    border-radius: 50% 50% 20% 20%;
+    background:
+        radial-gradient(circle at 50% 30%, #38304d 0 8%, transparent 9%),
+        linear-gradient(180deg, #211b32, #090711);
+    box-shadow:
+        0 0 40px rgba(180, 130, 255, 0.35);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 70px;
+    font-size: 32px;
+    color: white;
+}
