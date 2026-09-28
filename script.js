@@ -1267,7 +1267,7 @@ function openChapter(chapterNumber) {
 
      const characterExpressions = {
     elizabeth: {
-        neutral: "assets/characters/elizabeth-neutral.png",
+        neutral: "assets/elizabeth-neutral.png",
         surprised: "assets/characters/elizabeth-surprised.png",
         worried: "assets/characters/elizabeth-worried.png",
         serious: "assets/characters/elizabeth-serious.png"
