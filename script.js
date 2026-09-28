@@ -1337,7 +1337,7 @@ const characterImage =
                     <div class="${elizabethActive} character-slot character-left">
 
                         <img
-                            src="assets/characters/elizabeth-neutral.png"
+                           src="${characterImage}"
                             class="visual-novel-character"
                             alt="Elizabeth"
                         >
