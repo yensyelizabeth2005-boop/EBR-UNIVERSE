@@ -1111,55 +1111,43 @@ function openChapter(chapterNumber) {
                 {
                     speaker: "ELIZABETH",
                     text: "The night was unusually quiet.",
-                    character: "assets/characters/elizabeth-neutral.png"
+                    character: "elizabeth"
                 },
 
                 {
                     speaker: "ELIZABETH",
                     text: "Beyond the window, thousands of lights illuminated a city that never seemed to sleep.",
-                    character: "assets/characters/elizabeth-neutral.png"
-                },
-
-                {
-                    speaker: "ELIZABETH",
-                    text: "I opened my eyes and looked around.",
-                    character: "assets/characters/elizabeth-neutral.png"
-                },
-
-                {
-                    speaker: "ELIZABETH",
-                    text: "Everything felt familiar...",
-                    character: "assets/characters/elizabeth-neutral.png"
+                    character: "elizabeth"
                 },
 
                 {
                     speaker: "MYSTERIOUS VOICE",
                     text: "Elizabeth...",
-                    character: "assets/characters/elizabeth-neutral.png"
+                    character: "mysterious"
                 },
 
                 {
                     speaker: "ELIZABETH",
                     text: "I froze. Someone had called my name.",
-                    character: "assets/characters/elizabeth-neutral.png"
+                    character: "elizabeth"
                 },
 
                 {
                     speaker: "MYSTERIOUS VOICE",
                     text: "Your story has already begun.",
-                    character: "assets/characters/elizabeth-neutral.png"
+                    character: "mysterious"
                 },
 
                 {
                     speaker: "ELIZABETH",
                     text: "Who are you?",
-                    character: "assets/characters/elizabeth-neutral.png"
+                    character: "elizabeth"
                 },
 
                 {
                     speaker: "MYSTERIOUS VOICE",
                     text: "That is something you will discover soon.",
-                    character: "assets/characters/elizabeth-neutral.png"
+                    character: "mysterious"
                 }
 
             ]
@@ -1174,31 +1162,25 @@ function openChapter(chapterNumber) {
                 {
                     speaker: "ELIZABETH",
                     text: "The next morning, something had changed.",
-                    character: "assets/characters/elizabeth-neutral.png"
+                    character: "elizabeth"
                 },
 
                 {
                     speaker: "ELIZABETH",
                     text: "A mysterious message appeared on my phone.",
-                    character: "assets/characters/elizabeth-neutral.png"
-                },
-
-                {
-                    speaker: "ELIZABETH",
-                    text: "I stared at the screen, wondering who could have sent it.",
-                    character: "assets/characters/elizabeth-neutral.png"
+                    character: "elizabeth"
                 },
 
                 {
                     speaker: "UNKNOWN",
                     text: "You shouldn't have ignored my warning.",
-                    character: "assets/characters/elizabeth-neutral.png"
+                    character: "mysterious"
                 },
 
                 {
                     speaker: "ELIZABETH",
                     text: "What warning?",
-                    character: "assets/characters/elizabeth-neutral.png"
+                    character: "elizabeth"
                 }
 
             ]
@@ -1213,25 +1195,19 @@ function openChapter(chapterNumber) {
                 {
                     speaker: "ELIZABETH",
                     text: "I followed the mysterious clues.",
-                    character: "assets/characters/elizabeth-neutral.png"
+                    character: "elizabeth"
                 },
 
                 {
-                    speaker: "ELIZABETH",
-                    text: "Something was hidden beneath the surface of my world.",
-                    character: "assets/characters/elizabeth-neutral.png"
-                },
-
-                {
-                    speaker: "UNKNOWN",
+                    speaker: "MYSTERIOUS VOICE",
                     text: "You were never supposed to find this place.",
-                    character: "assets/characters/elizabeth-neutral.png"
+                    character: "mysterious"
                 },
 
                 {
                     speaker: "ELIZABETH",
                     text: "Then tell me why I am here.",
-                    character: "assets/characters/elizabeth-neutral.png"
+                    character: "elizabeth"
                 }
 
             ]
@@ -1246,19 +1222,19 @@ function openChapter(chapterNumber) {
                 {
                     speaker: "ELIZABETH",
                     text: "Every answer seemed to create another question.",
-                    character: "assets/characters/elizabeth-neutral.png"
+                    character: "elizabeth"
                 },
 
                 {
-                    speaker: "UNKNOWN",
+                    speaker: "MYSTERIOUS VOICE",
                     text: "Now you must decide what happens next.",
-                    character: "assets/characters/elizabeth-neutral.png"
+                    character: "mysterious"
                 },
 
                 {
                     speaker: "ELIZABETH",
                     text: "There has to be another way.",
-                    character: "assets/characters/elizabeth-neutral.png"
+                    character: "elizabeth"
                 }
 
             ]
@@ -1273,19 +1249,13 @@ function openChapter(chapterNumber) {
                 {
                     speaker: "ELIZABETH",
                     text: "The first chapter of my new life had reached its end.",
-                    character: "assets/characters/elizabeth-neutral.png"
-                },
-
-                {
-                    speaker: "ELIZABETH",
-                    text: "But this was not the end of the story.",
-                    character: "assets/characters/elizabeth-neutral.png"
+                    character: "elizabeth"
                 },
 
                 {
                     speaker: "MYSTERIOUS VOICE",
                     text: "It was only the beginning.",
-                    character: "assets/characters/elizabeth-neutral.png"
+                    character: "mysterious"
                 }
 
             ]
@@ -1299,6 +1269,16 @@ function openChapter(chapterNumber) {
     function renderDialogue() {
 
         const dialogue = chapter.dialogues[dialogueIndex];
+
+        const elizabethActive =
+            dialogue.character === "elizabeth"
+                ? "active-character"
+                : "inactive-character";
+
+        const mysteriousActive =
+            dialogue.character === "mysterious"
+                ? "active-character"
+                : "inactive-character";
 
         document.body.innerHTML = `
 
@@ -1319,18 +1299,15 @@ function openChapter(chapterNumber) {
 
                     <div>
                         <p>EBR ✦ UNIVERSE</p>
-
                         <span>
                             THE FIRST STORY · SEASON 1
                         </span>
                     </div>
 
                     <div class="visual-novel-icons">
-
                         <button>☰</button>
                         <button>♡</button>
                         <button>⚙</button>
-
                     </div>
 
                 </header>
@@ -1339,15 +1316,30 @@ function openChapter(chapterNumber) {
                     ✦ ${chapter.title}
                 </div>
 
+
                 <div class="character-layer">
 
-                    <img
-                        src="${dialogue.character}"
-                        class="visual-novel-character"
-                        alt="${dialogue.speaker}"
-                    >
+                    <div class="${elizabethActive} character-slot character-left">
+
+                        <img
+                            src="assets/characters/elizabeth-neutral.png"
+                            class="visual-novel-character"
+                            alt="Elizabeth"
+                        >
+
+                    </div>
+
+
+                    <div class="${mysteriousActive} character-slot character-right">
+
+                        <div class="mysterious-character">
+                            ✦
+                        </div>
+
+                    </div>
 
                 </div>
+
 
                 <section class="visual-novel-dialogue">
 
@@ -1372,43 +1364,34 @@ function openChapter(chapterNumber) {
 
                         ${
                             dialogueIndex < chapter.dialogues.length - 1
-
                             ? `
-
                                 <button
                                     class="next-button"
                                     onclick="nextDialogue()">
                                     NEXT →
                                 </button>
-
                             `
-
                             : chapterNumber < 5
-
                             ? `
-
                                 <button
                                     class="next-button"
                                     onclick="openChapter(${chapterNumber + 1})">
                                     NEXT CHAPTER →
                                 </button>
-
                             `
-
                             : `
-
                                 <button
                                     class="next-button"
                                     onclick="openStory('first-story')">
                                     CHAPTERS
                                 </button>
-
                             `
                         }
 
                     </div>
 
                 </section>
+
 
                 <div class="chapter-progress">
 
@@ -1428,6 +1411,7 @@ function openChapter(chapterNumber) {
         `;
     }
 
+
     window.nextDialogue = function() {
 
         if (dialogueIndex < chapter.dialogues.length - 1) {
@@ -1435,9 +1419,9 @@ function openChapter(chapterNumber) {
             dialogueIndex++;
 
             renderDialogue();
-
         }
     };
+
 
     renderDialogue();
 }
