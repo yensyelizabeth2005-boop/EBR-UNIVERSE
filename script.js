@@ -1278,7 +1278,13 @@ function openChapter(chapterNumber) {
     function renderDialogue() {
 
         const dialogue = chapter.dialogues[dialogueIndex];
+         const expression = dialogue.expression || "neutral";
 
+const characterImage =
+    characterExpressions[dialogue.character]?.[expression] ||
+    characterExpressions[dialogue.character]?.neutral;
+
+        
         const elizabethActive =
             dialogue.character === "elizabeth"
                 ? "active-character"
