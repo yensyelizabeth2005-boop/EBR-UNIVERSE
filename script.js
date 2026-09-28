@@ -1093,7 +1093,7 @@ function openStory(storyId) {
     `;
 }
 
- function openChapter(chapterNumber) {
+function openChapter(chapterNumber) {
 
     if (chapterNumber < 1 || chapterNumber > 5) {
         alert("Chapter not found.");
@@ -1105,192 +1105,339 @@ function openStory(storyId) {
         1: {
             title: "A NEW BEGINNING",
             background: "assets/chapter1-bedroom.png",
-            character: "assets/characters/elizabeth-neutral.png",
-            characterName: "ELIZABETH",
-            text: `
-                The night was unusually quiet.
 
-                Beyond the window, thousands of lights illuminated a city that never seemed to sleep.
+            dialogues: [
 
-                I opened my eyes and looked around.
+                {
+                    speaker: "ELIZABETH",
+                    text: "The night was unusually quiet.",
+                    character: "assets/characters/elizabeth-neutral.png"
+                },
 
-                Everything felt familiar...
+                {
+                    speaker: "ELIZABETH",
+                    text: "Beyond the window, thousands of lights illuminated a city that never seemed to sleep.",
+                    character: "assets/characters/elizabeth-neutral.png"
+                },
 
-                and yet, somehow, completely different.
+                {
+                    speaker: "ELIZABETH",
+                    text: "I opened my eyes and looked around.",
+                    character: "assets/characters/elizabeth-neutral.png"
+                },
 
-                A strange feeling told me that tonight was the beginning of something I could never turn back from.
-            `
+                {
+                    speaker: "ELIZABETH",
+                    text: "Everything felt familiar...",
+                    character: "assets/characters/elizabeth-neutral.png"
+                },
+
+                {
+                    speaker: "MYSTERIOUS VOICE",
+                    text: "Elizabeth...",
+                    character: "assets/characters/elizabeth-neutral.png"
+                },
+
+                {
+                    speaker: "ELIZABETH",
+                    text: "I froze. Someone had called my name.",
+                    character: "assets/characters/elizabeth-neutral.png"
+                },
+
+                {
+                    speaker: "MYSTERIOUS VOICE",
+                    text: "Your story has already begun.",
+                    character: "assets/characters/elizabeth-neutral.png"
+                },
+
+                {
+                    speaker: "ELIZABETH",
+                    text: "Who are you?",
+                    character: "assets/characters/elizabeth-neutral.png"
+                },
+
+                {
+                    speaker: "MYSTERIOUS VOICE",
+                    text: "That is something you will discover soon.",
+                    character: "assets/characters/elizabeth-neutral.png"
+                }
+
+            ]
         },
 
         2: {
             title: "THE UNKNOWN",
             background: "assets/chapter1-morning.png",
-            character: "assets/characters/elizabeth-surprised.png",
-            characterName: "ELIZABETH",
-            text: `
-                The next morning, something had changed.
 
-                A mysterious message appeared on my phone.
+            dialogues: [
 
-                I stared at the screen, wondering who could have sent it.
+                {
+                    speaker: "ELIZABETH",
+                    text: "The next morning, something had changed.",
+                    character: "assets/characters/elizabeth-neutral.png"
+                },
 
-                There was only one sentence:
+                {
+                    speaker: "ELIZABETH",
+                    text: "A mysterious message appeared on my phone.",
+                    character: "assets/characters/elizabeth-neutral.png"
+                },
 
-                Your story has already begun.
-            `
+                {
+                    speaker: "ELIZABETH",
+                    text: "I stared at the screen, wondering who could have sent it.",
+                    character: "assets/characters/elizabeth-neutral.png"
+                },
+
+                {
+                    speaker: "UNKNOWN",
+                    text: "You shouldn't have ignored my warning.",
+                    character: "assets/characters/elizabeth-neutral.png"
+                },
+
+                {
+                    speaker: "ELIZABETH",
+                    text: "What warning?",
+                    character: "assets/characters/elizabeth-neutral.png"
+                }
+
+            ]
         },
 
         3: {
             title: "THE SECRET",
             background: "assets/chapter1-secret.png",
-            character: "assets/characters/elizabeth-curious.png",
-            characterName: "ELIZABETH",
-            text: `
-                I followed the mysterious clues and discovered something hidden beneath the surface of my world.
 
-                Someone had been waiting for me.
+            dialogues: [
 
-                But why?
-            `
+                {
+                    speaker: "ELIZABETH",
+                    text: "I followed the mysterious clues.",
+                    character: "assets/characters/elizabeth-neutral.png"
+                },
+
+                {
+                    speaker: "ELIZABETH",
+                    text: "Something was hidden beneath the surface of my world.",
+                    character: "assets/characters/elizabeth-neutral.png"
+                },
+
+                {
+                    speaker: "UNKNOWN",
+                    text: "You were never supposed to find this place.",
+                    character: "assets/characters/elizabeth-neutral.png"
+                },
+
+                {
+                    speaker: "ELIZABETH",
+                    text: "Then tell me why I am here.",
+                    character: "assets/characters/elizabeth-neutral.png"
+                }
+
+            ]
         },
 
         4: {
             title: "THE CHOICE",
             background: "assets/chapter1-choice.png",
-            character: "assets/characters/elizabeth-serious.png",
-            characterName: "ELIZABETH",
-            text: `
-                Every answer seemed to create another question.
 
-                I finally realized that the path ahead would depend on a choice.
+            dialogues: [
 
-                There was no going back now.
-            `
+                {
+                    speaker: "ELIZABETH",
+                    text: "Every answer seemed to create another question.",
+                    character: "assets/characters/elizabeth-neutral.png"
+                },
+
+                {
+                    speaker: "UNKNOWN",
+                    text: "Now you must decide what happens next.",
+                    character: "assets/characters/elizabeth-neutral.png"
+                },
+
+                {
+                    speaker: "ELIZABETH",
+                    text: "There has to be another way.",
+                    character: "assets/characters/elizabeth-neutral.png"
+                }
+
+            ]
         },
 
         5: {
             title: "THE BEGINNING OF EVERYTHING",
             background: "assets/chapter1-ending.png",
-            character: "assets/characters/elizabeth-emotional.png",
-            characterName: "ELIZABETH",
-            text: `
-                The first chapter of my new life had reached its end.
 
-                But this was not the end of the story.
+            dialogues: [
 
-                It was only the beginning.
-            `
+                {
+                    speaker: "ELIZABETH",
+                    text: "The first chapter of my new life had reached its end.",
+                    character: "assets/characters/elizabeth-neutral.png"
+                },
+
+                {
+                    speaker: "ELIZABETH",
+                    text: "But this was not the end of the story.",
+                    character: "assets/characters/elizabeth-neutral.png"
+                },
+
+                {
+                    speaker: "MYSTERIOUS VOICE",
+                    text: "It was only the beginning.",
+                    character: "assets/characters/elizabeth-neutral.png"
+                }
+
+            ]
         }
     };
 
     const chapter = chapters[chapterNumber];
 
-    document.body.innerHTML = `
+    let dialogueIndex = 0;
 
-        <main
-            class="visual-novel"
-            style="--scene-background: url('${chapter.background}')"
-        >
+    function renderDialogue() {
 
-            <div class="scene-background"></div>
+        const dialogue = chapter.dialogues[dialogueIndex];
 
-            <div class="scene-glow"></div>
+        document.body.innerHTML = `
 
-            <div class="scene-particles">
-                ✦　·　✧　·　⋆　·　✦　·　✧
-            </div>
+            <main
+                class="visual-novel"
+                style="--scene-background: url('${chapter.background}')"
+            >
 
-            <header class="visual-novel-header">
+                <div class="scene-background"></div>
 
-                <div>
-                    <p>EBR ✦ UNIVERSE</p>
-                    <span>THE FIRST STORY · SEASON 1</span>
+                <div class="scene-glow"></div>
+
+                <div class="scene-particles">
+                    ✦　·　✧　·　⋆　·　✦　·　✧
                 </div>
 
-                <div class="visual-novel-icons">
-                    <button>☰</button>
-                    <button>♡</button>
-                    <button>⚙</button>
-                </div>
+                <header class="visual-novel-header">
 
-            </header>
+                    <div>
+                        <p>EBR ✦ UNIVERSE</p>
 
-            <div class="scene-location">
-                ✦ MY ROOM · 10:42 PM
-            </div>
-
-            <div class="character-layer">
-
-                <img
-                    src="${chapter.character}"
-                    class="visual-novel-character"
-                    alt="${chapter.characterName}"
-                >
-
-            </div>
-
-            <section class="visual-novel-dialogue">
-
-                <div class="character-name">
-                    ✦ ${chapter.characterName}
-                </div>
-
-                <div class="dialogue-text">
-
-                    ${chapter.text
-                        .trim()
-                        .split("\n\n")
-                        .map(paragraph =>
-                            `<p>${paragraph.trim()}</p>`
-                        )
-                        .join("")}
-
-                </div>
-
-                <div class="dialogue-controls">
-
-                    ${
-                        chapterNumber > 1
-                        ? `
-                            <button
-                                onclick="openChapter(${chapterNumber - 1})">
-                                ←
-                            </button>
-                        `
-                        : `<span></span>`
-                    }
-
-                    ${
-                        chapterNumber < 5
-                        ? `
-                            <button
-                                class="next-button"
-                                onclick="openChapter(${chapterNumber + 1})">
-                                NEXT →
-                            </button>
-                        `
-                        : `
-                            <button
-                                class="next-button"
-                                onclick="openStory('first-story')">
-                                CHAPTERS
-                            </button>
-                        `
-                    }
-
-                </div>
-
-            </section>
-
-            <div class="chapter-progress">
-                ✦ ${chapterNumber} / 5
-                <div class="progress-line">
-                    <div
-                        style="width:${chapterNumber * 20}%">
+                        <span>
+                            THE FIRST STORY · SEASON 1
+                        </span>
                     </div>
-                </div>
-            </div>
 
-        </main>
-    `;
+                    <div class="visual-novel-icons">
+
+                        <button>☰</button>
+                        <button>♡</button>
+                        <button>⚙</button>
+
+                    </div>
+
+                </header>
+
+                <div class="scene-location">
+                    ✦ ${chapter.title}
+                </div>
+
+                <div class="character-layer">
+
+                    <img
+                        src="${dialogue.character}"
+                        class="visual-novel-character"
+                        alt="${dialogue.speaker}"
+                    >
+
+                </div>
+
+                <section class="visual-novel-dialogue">
+
+                    <div class="character-name">
+                        ✦ ${dialogue.speaker}
+                    </div>
+
+                    <div class="dialogue-text">
+
+                        <p>
+                            ${dialogue.text}
+                        </p>
+
+                    </div>
+
+                    <div class="dialogue-controls">
+
+                        <button
+                            onclick="showStoriesCatalog()">
+                            MENU
+                        </button>
+
+                        ${
+                            dialogueIndex < chapter.dialogues.length - 1
+
+                            ? `
+
+                                <button
+                                    class="next-button"
+                                    onclick="nextDialogue()">
+                                    NEXT →
+                                </button>
+
+                            `
+
+                            : chapterNumber < 5
+
+                            ? `
+
+                                <button
+                                    class="next-button"
+                                    onclick="openChapter(${chapterNumber + 1})">
+                                    NEXT CHAPTER →
+                                </button>
+
+                            `
+
+                            : `
+
+                                <button
+                                    class="next-button"
+                                    onclick="openStory('first-story')">
+                                    CHAPTERS
+                                </button>
+
+                            `
+                        }
+
+                    </div>
+
+                </section>
+
+                <div class="chapter-progress">
+
+                    ✦ ${chapterNumber} / 5
+
+                    <div class="progress-line">
+
+                        <div
+                            style="width:${chapterNumber * 20}%">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </main>
+        `;
+    }
+
+    window.nextDialogue = function() {
+
+        if (dialogueIndex < chapter.dialogues.length - 1) {
+
+            dialogueIndex++;
+
+            renderDialogue();
+
+        }
+    };
+
+    renderDialogue();
 }
