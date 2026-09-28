@@ -1139,10 +1139,11 @@ function openChapter(chapterNumber) {
                 },
 
                 {
-                    speaker: "ELIZABETH",
-                    text: "Who are you?",
-                    character: "elizabeth"
-                },
+                  speaker: "ELIZABETH",
+                  text: "Who are you?",
+                  character: "elizabeth",
+                 expression: "surprised"
+                }
 
                 {
                     speaker: "MYSTERIOUS VOICE",
