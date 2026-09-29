@@ -1375,7 +1375,7 @@ const characterImage =
 
 
                 <section class="visual-novel-dialogue">
-
+                     
                     <div class="character-name">
                         ✦ ${dialogue.speaker}
                     </div>
@@ -1386,8 +1386,28 @@ const characterImage =
                             ${dialogue.text}
                         </p>
 
-                    </div>
+                     </div>
+                      ${
+           dialogue.choice
+         ? `
+           <div class="choice-container">
 
+            <div class="choice-question">
+                ${dialogue.choice.question}
+            </div>
+
+            ${dialogue.choice.options.map(option => `
+                <button
+                    class="choice-button"
+                    onclick="makeChoice('${option.action}')">
+                    ${option.text}
+                 </button>
+               `).join("")}
+
+            </div>
+    `
+           : ""
+       }
                     <div class="dialogue-controls">
 
                         <button
