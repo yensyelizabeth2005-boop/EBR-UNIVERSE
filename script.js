@@ -1140,10 +1140,28 @@ function openChapter(chapterNumber) {
 
                 {
                   speaker: "ELIZABETH",
-                  text: "Who are you?",
-                  character: "elizabeth",
-                 expression: "surprised"
-                },
+                 text: "Who are you?",
+                character: "elizabeth",
+               expression: "surprised",
+
+              choice: {
+            question: "What will Elizabeth do?",
+            options: [
+            {
+                text: "Follow the voice.",
+                action: "follow"
+            },
+            {
+                text: "Ignore the voice.",
+                action: "ignore"
+            },
+            {
+                text: "Ask who they are.",
+                action: "ask"
+              }
+              ]
+           }
+            },
 
                 {
                     speaker: "MYSTERIOUS VOICE",
