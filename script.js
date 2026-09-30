@@ -1464,7 +1464,20 @@ const characterImage =
         `;
     }
 
+    window.makeChoice = function(action) {
 
+    if (action === "follow") {
+        alert("Elizabeth decided to follow the voice.");
+    }
+
+    if (action === "ignore") {
+        alert("Elizabeth decided to ignore the voice.");
+    }
+
+    if (action === "ask") {
+        alert("Elizabeth decided to ask who they are.");
+    }
+};
     window.nextDialogue = function() {
 
         if (dialogueIndex < chapter.dialogues.length - 1) {
