@@ -1163,11 +1163,11 @@ function openChapter(chapterNumber) {
            }
             },
 
-                {
-                    speaker: "MYSTERIOUS VOICE",
-                    text: "That is something you will discover soon.",
-                    character: "mysterious"
-                }
+               {
+         speaker: "MYSTERIOUS VOICE",
+        text: "That is something you will discover soon.",
+        character: "mysterious"
+            },
           {
             speaker: "ELIZABETH",
            text: "I took a deep breath and decided to follow the voice.",
