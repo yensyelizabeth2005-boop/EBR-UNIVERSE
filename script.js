@@ -1168,7 +1168,18 @@ function openChapter(chapterNumber) {
                     text: "That is something you will discover soon.",
                     character: "mysterious"
                 }
+          {
+            speaker: "ELIZABETH",
+           text: "I took a deep breath and decided to follow the voice.",
+         character: "elizabeth",
+        expression: "serious"
+       },
 
+    {
+      speaker: "MYSTERIOUS VOICE",
+      text: "Then come closer, Elizabeth.",
+      character: "mysterious"
+    }
             ]
         },
 
