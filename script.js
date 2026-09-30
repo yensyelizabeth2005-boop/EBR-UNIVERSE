@@ -1466,10 +1466,10 @@ const characterImage =
 
     window.makeChoice = function(action) {
 
-    if (action === "follow") {
-        alert("Elizabeth decided to follow the voice.");
-    }
-
+   if (action === "follow") {
+    dialogueIndex = 7;
+    renderDialogue();
+}
     if (action === "ignore") {
         alert("Elizabeth decided to ignore the voice.");
     }
