@@ -1477,16 +1477,19 @@ const characterImage =
 
     window.makeChoice = function(action) {
 
-   if (action === "follow") {
-    dialogueIndex = 7;
-    renderDialogue();
-}
+    if (action === "follow") {
+        dialogueIndex = 7;
+        renderDialogue();
+    }
+
     if (action === "ignore") {
-        alert("Elizabeth decided to ignore the voice.");
+        dialogueIndex = 8;
+        renderDialogue();
     }
 
     if (action === "ask") {
-        alert("Elizabeth decided to ask who they are.");
+        dialogueIndex = 9;
+        renderDialogue();
     }
 };
     window.nextDialogue = function() {
