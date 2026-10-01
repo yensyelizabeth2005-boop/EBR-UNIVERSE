@@ -1508,14 +1508,14 @@ const characterImage =
     }
 
     if (action === "ignore") {
-        dialogueIndex = 8;
-        renderDialogue();
-    }
+    dialogueIndex = 9;
+    renderDialogue();
+}
 
-    if (action === "ask") {
-        dialogueIndex = 9;
-        renderDialogue();
-    }
+if (action === "ask") {
+    dialogueIndex = 11;
+    renderDialogue();
+}
 };
     window.nextDialogue = function() {
 
