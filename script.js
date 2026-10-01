@@ -1179,7 +1179,32 @@ function openChapter(chapterNumber) {
       speaker: "MYSTERIOUS VOICE",
       text: "Then come closer, Elizabeth.",
       character: "mysterious"
-    }
+    },
+                {
+    speaker: "ELIZABETH",
+    text: "No... I'm not going to follow you.",
+    character: "elizabeth",
+    expression: "worried"
+},
+
+{
+    speaker: "MYSTERIOUS VOICE",
+    text: "You can refuse, but the universe will still remember your choice.",
+    character: "mysterious"
+},
+
+{
+    speaker: "ELIZABETH",
+    text: "Then tell me who you are.",
+    character: "elizabeth",
+    expression: "serious"
+},
+
+{
+    speaker: "MYSTERIOUS VOICE",
+    text: "Someone who has been waiting for you.",
+    character: "mysterious"
+}
             ]
         },
 
