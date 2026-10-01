@@ -1506,6 +1506,10 @@ const characterImage =
    window.makeChoice = function(action) {
 
     if (action === "follow") {
+
+        relationshipMysterious += 2;
+        trustMysterious += 2;
+
         dialogueIndex = chapter.dialogues.findIndex(
             dialogue =>
                 dialogue.text === "I took a deep breath and decided to follow the voice."
@@ -1513,6 +1517,10 @@ const characterImage =
     }
 
     if (action === "ignore") {
+
+        relationshipMysterious -= 1;
+        trustMysterious -= 2;
+
         dialogueIndex = chapter.dialogues.findIndex(
             dialogue =>
                 dialogue.text === "No... I'm not going to follow you."
@@ -1520,6 +1528,10 @@ const characterImage =
     }
 
     if (action === "ask") {
+
+        relationshipMysterious += 1;
+        trustMysterious += 1;
+
         dialogueIndex = chapter.dialogues.findIndex(
             dialogue =>
                 dialogue.text === "Then tell me who you are."
