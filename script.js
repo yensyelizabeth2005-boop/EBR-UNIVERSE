@@ -1329,6 +1329,9 @@ function openChapter(chapterNumber) {
 };
     let dialogueIndex = 0;
 
+    let relationshipMysterious = 0;
+    let trustMysterious = 0;
+    
     function renderDialogue() {
 
         const dialogue = chapter.dialogues[dialogueIndex];
