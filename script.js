@@ -1427,7 +1427,7 @@ const characterImage =
                         </button>
 
                         ${
-                            dialogueIndex < chapter.dialogues.length - 1
+                            !dialogue.choice && dialogueIndex < chapter.dialogues.length - 1
                             ? `
                                 <button
                                     class="next-button"
