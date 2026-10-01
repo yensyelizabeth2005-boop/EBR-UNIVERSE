@@ -1500,7 +1500,7 @@ const characterImage =
         `;
     }
 
-    window.makeChoice = function(action) {
+   window.makeChoice = function(action) {
 
     if (action === "follow") {
         dialogueIndex = 7;
@@ -1508,12 +1508,12 @@ const characterImage =
     }
 
     if (action === "ignore") {
-        dialogueIndex = 8;
+        dialogueIndex = 9;
         renderDialogue();
     }
 
     if (action === "ask") {
-        dialogueIndex = 9;
+        dialogueIndex = 11;
         renderDialogue();
     }
 };
