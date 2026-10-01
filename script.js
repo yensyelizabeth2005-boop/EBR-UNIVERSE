@@ -1503,17 +1503,27 @@ const characterImage =
    window.makeChoice = function(action) {
 
     if (action === "follow") {
-        dialogueIndex = 7;
-        renderDialogue();
+        dialogueIndex = chapter.dialogues.findIndex(
+            dialogue =>
+                dialogue.text === "I took a deep breath and decided to follow the voice."
+        );
     }
 
     if (action === "ignore") {
-        dialogueIndex = 9;
-        renderDialogue();
+        dialogueIndex = chapter.dialogues.findIndex(
+            dialogue =>
+                dialogue.text === "No... I'm not going to follow you."
+        );
     }
 
     if (action === "ask") {
-        dialogueIndex = 11;
+        dialogueIndex = chapter.dialogues.findIndex(
+            dialogue =>
+                dialogue.text === "Then tell me who you are."
+        );
+    }
+
+    if (dialogueIndex !== -1) {
         renderDialogue();
     }
 };
