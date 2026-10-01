@@ -1539,8 +1539,11 @@ const characterImage =
     }
 
     if (dialogueIndex !== -1) {
-        renderDialogue();
-    }
+    console.log("Relationship:", relationshipMysterious);
+    console.log("Trust:", trustMysterious);
+    renderDialogue();
+}
+       
 };
     window.nextDialogue = function() {
 
