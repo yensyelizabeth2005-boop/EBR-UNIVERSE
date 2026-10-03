@@ -1394,10 +1394,10 @@ const characterImage =
                     <div class="${elizabethActive} character-slot character-left">
 
                         <img
-                           src="assets/elizabeth-neutral.png"
-                            class="visual-novel-character"
-                            alt="Elizabeth"
-                        >
+                         src="${characterImage}"
+                        class="visual-novel-character"
+                        alt="Elizabeth"
+                    >
 
                     </div>
 
