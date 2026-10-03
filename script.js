@@ -1337,10 +1337,13 @@ function openChapter(chapterNumber) {
         const dialogue = chapter.dialogues[dialogueIndex];
          const expression = dialogue.expression || "neutral";
 
-const characterImage =
-    characterExpressions[dialogue.character]?.[expression] ||
-    characterExpressions[dialogue.character]?.neutral;
+let characterImage = "";
 
+if (dialogue.character === "elizabeth") {
+    characterImage =
+        characterExpressions.elizabeth[expression] ||
+        characterExpressions.elizabeth.neutral;
+}
         
         const elizabethActive =
             dialogue.character === "elizabeth"
@@ -1393,11 +1396,18 @@ const characterImage =
 
                     <div class="${elizabethActive} character-slot character-left">
 
-                        <img
-                         src="${characterImage}"
-                        class="visual-novel-character"
-                        alt="Elizabeth"
-                    >
+                        ${
+                            
+                 dialogue.character === "elizabeth"
+                  ? `
+              <img
+            src="${characterImage}"
+            class="visual-novel-character"
+            alt="Elizabeth"
+            >
+    `
+           : ""
+           }
 
                     </div>
 
