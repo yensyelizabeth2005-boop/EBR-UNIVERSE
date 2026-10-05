@@ -2369,3 +2369,29 @@ body {
     font-size: 32px;
     color: white;
 }
+
+ /* EBR - FIX ELIZABETH */
+.character-slot.character-left {
+    position: absolute !important;
+    left: 3% !important;
+    bottom: 8% !important;
+    width: 45% !important;
+    height: 82% !important;
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: center !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 20 !important;
+}
+
+.character-slot.character-left img.visual-novel-character {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: 100% !important;
+    width: auto !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    object-position: bottom center !important;
+}
