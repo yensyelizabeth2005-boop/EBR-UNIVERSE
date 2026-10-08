@@ -1396,18 +1396,21 @@ if (dialogue.character === "elizabeth") {
 
                     <div class="${elizabethActive} character-slot character-left">
 
-                        ${
-                            
-                 dialogue.character === "elizabeth"
-                  ? `
-              <img
-            src="${characterImage}"
-            class="visual-novel-character"
-            alt="Elizabeth"
-            >
-    `
-           : ""
-           }
+                        <img
+    src="assets/elizabeth-neutral.png"
+    class="visual-novel-character"
+    alt="Elizabeth"
+    style="
+        position:absolute;
+        left:5%;
+        bottom:0;
+        height:80%;
+        width:auto;
+        display:block;
+        opacity:1;
+        z-index:50;
+    "
+>
 
                     </div>
 
