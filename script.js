@@ -1354,7 +1354,9 @@ if (dialogue.character === "elizabeth") {
             dialogue.character === "mysterious"
                 ? "active-character"
                 : "inactive-character";
-
+        
+console.log("EBR TEST:", characterImage);
+        
         document.body.innerHTML = `
 
             <main
