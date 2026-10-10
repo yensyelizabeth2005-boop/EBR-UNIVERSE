@@ -1399,7 +1399,7 @@ console.log("EBR TEST:", characterImage);
                     <div class="${elizabethActive} character-slot character-left">
 
                         <img
-    src="assets/elizabeth-neutral.png"
+    src="${characterImage}"
     class="visual-novel-character"
     alt="Elizabeth"
     style="
