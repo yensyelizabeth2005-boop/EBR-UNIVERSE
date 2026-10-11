@@ -1319,6 +1319,24 @@ function openChapter(chapterNumber) {
 
     const chapter = chapters[chapterNumber]; 
 
+    
+if (chapterNumber === 2 && lastChoice) {
+    const chapterTwoOpenings = {
+        follow: "I couldn't stop thinking about the voice I had chosen to follow.",
+        ignore: "I hoped ignoring the voice had been the right decision.",
+        ask: "I kept remembering the questions I had asked the mysterious voice."
+    };
+
+    chapter.dialogues[0].text = chapterTwoOpenings[lastChoice];
+
+    chapter.dialogues[2].text =
+        lastChoice === "ignore"
+            ? "You shouldn't have ignored my warning."
+            : lastChoice === "follow"
+                ? "You chose to follow me. Now you must listen carefully."
+                : "You asked the right questions, Elizabeth. Be careful what you discover.";
+}
+
      const characterExpressions = {
     elizabeth: {
         neutral: "assets/elizabeth-new.png",
