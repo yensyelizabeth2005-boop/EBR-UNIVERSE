@@ -1518,57 +1518,78 @@ console.log("EBR TEST:", characterImage);
         `;
     }
 
-   window.makeChoice = function(action) {
-
-    if (action === "follow") {
-
-        relationshipMysterious += 2;
-        trustMysterious += 2;
-
-        dialogueIndex = chapter.dialogues.findIndex(
-            dialogue =>
-                dialogue.text === "I took a deep breath and decided to follow the voice."
-        );
-    }
-
-    if (action === "ignore") {
-
-        relationshipMysterious -= 1;
-        trustMysterious -= 2;
-
-        dialogueIndex = chapter.dialogues.findIndex(
-            dialogue =>
-                dialogue.text === "No... I'm not going to follow you."
-        );
-    }
-
-    if (action === "ask") {
-
-        relationshipMysterious += 1;
-        trustMysterious += 1;
-
-        dialogueIndex = chapter.dialogues.findIndex(
-            dialogue =>
-                dialogue.text === "Then tell me who you are."
-        );
-    }
-
-    if (dialogueIndex !== -1) {
-    console.log("Relationship:", relationshipMysterious);
-    console.log("Trust:", trustMysterious);
-    renderDialogue();
-}
-       
-};
-    window.nextDialogue = function() {
-
-        if (dialogueIndex < chapter.dialogues.length - 1) {
-
-            dialogueIndex++;
-
-            renderDialogue();
+   
+window.makeChoice = function(action) {
+    const choiceRoutes = {
+        follow: {
+            relationship: 2,
+            trust: 2,
+            dialogue: {
+                speaker: "ELIZABETH",
+                text: "I decided to follow the mysterious voice. If it knew my name, I needed answers.",
+                character: "elizabeth",
+                expression: "serious"
+            }
+        },
+        ignore: {
+            relationship: -1,
+            trust: -2,
+            dialogue: {
+                speaker: "ELIZABETH",
+                text: "I refused to follow the voice. Whatever it wanted, I wasn't ready to trust it.",
+                character: "elizabeth",
+                expression: "worried"
+            }
+        },
+        ask: {
+            relationship: 1,
+            trust: 1,
+            dialogue: {
+                speaker: "ELIZABETH",
+                text: "I gathered my courage. 'Tell me who you are, and why you know my name.'",
+                character: "elizabeth",
+                expression: "surprised"
+            }
         }
     };
+
+    const selectedRoute = choiceRoutes[action];
+
+    if (!selectedRoute) {
+        return;
+    }
+
+    relationshipMysterious += selectedRoute.relationship;
+    trustMysterious += selectedRoute.trust;
+
+    chapter.dialogues = chapter.dialogues.slice(
+        0,
+        dialogueIndex + 1
+    );
+
+    chapter.dialogues.push(selectedRoute.dialogue);
+
+    chapter.dialogues.push({
+        speaker: "MYSTERIOUS VOICE",
+        text: action === "follow"
+            ? "You have taken the first step. There is no turning back now."
+            : action === "ignore"
+                ? "You may close your door, Elizabeth, but the mystery will find you."
+                : "Questions are dangerous, Elizabeth. Especially the right ones.",
+        character: "mysterious"
+    });
+
+    dialogueIndex = chapter.dialogues.length - 2;
+
+    renderDialogue();
+};
+
+window.nextDialogue = function() {
+    if (dialogueIndex < chapter.dialogues.length - 1) {
+        dialogueIndex++;
+        renderDialogue();
+    }
+};
 
 
     renderDialogue();
