@@ -1613,5 +1613,5 @@ window.nextDialogue = function() {
 
 let relationshipMysterious = 0;
 let trustMysterious = 0;
-
 let lastChoice = null;
+let storyFlags = {};
