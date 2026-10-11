@@ -1556,7 +1556,7 @@ window.makeChoice = function(action) {
     if (!selectedRoute) {
         return;
     }
-
+    lastChoice = action;
     relationshipMysterious += selectedRoute.relationship;
     trustMysterious += selectedRoute.trust;
 
