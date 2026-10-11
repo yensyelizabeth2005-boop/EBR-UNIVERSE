@@ -1329,8 +1329,6 @@ function openChapter(chapterNumber) {
 };
     let dialogueIndex = 0;
 
-    let relationshipMysterious = 0;
-    let trustMysterious = 0;
     
     function renderDialogue() {
 
@@ -1517,7 +1515,7 @@ console.log("EBR TEST:", characterImage);
             </main>
         `;
     }
-
+  
    
 window.makeChoice = function(action) {
     const choiceRoutes = {
@@ -1594,3 +1592,6 @@ window.nextDialogue = function() {
 
     renderDialogue();
 }
+
+let relationshipMysterious = 0;
+let trustMysterious = 0;
