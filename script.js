@@ -1570,11 +1570,7 @@ window.makeChoice = function(action) {
     };
 
     const selectedRoute = choiceRoutes[action];
-    const choiceKey = `chapter_${chapterNumber}_choice`;
 
-if (storyFlags[choiceKey]) {
-    return;
-}
     
     if (!selectedRoute) {
         return;
