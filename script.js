@@ -1611,7 +1611,14 @@ window.nextDialogue = function() {
     renderDialogue();
 }
 
-let relationshipMysterious = 0;
-let trustMysterious = 0;
-let lastChoice = null;
-let storyFlags = {};
+let relationshipMysterious =
+    Number(localStorage.getItem("relationshipMysterious")) || 0;
+
+let trustMysterious =
+    Number(localStorage.getItem("trustMysterious")) || 0;
+
+let lastChoice = localStorage.getItem("lastChoice") || null;
+
+let storyFlags = JSON.parse(
+    localStorage.getItem("storyFlags") || "{}"
+);
