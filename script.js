@@ -1582,7 +1582,7 @@ if (storyFlags[choiceKey]) {
     lastChoice = action;
 
 storyFlags[action] = true;
-
+storyFlags[choiceKey] = action;
 relationshipMysterious += selectedRoute.relationship;
 trustMysterious += selectedRoute.trust;
 
