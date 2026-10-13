@@ -1575,9 +1575,29 @@ window.makeChoice = function(action) {
         return;
     }
     lastChoice = action;
-    relationshipMysterious += selectedRoute.relationship;
-    trustMysterious += selectedRoute.trust;
 
+storyFlags[action] = true;
+
+relationshipMysterious += selectedRoute.relationship;
+trustMysterious += selectedRoute.trust;
+
+localStorage.setItem("lastChoice", lastChoice);
+
+localStorage.setItem(
+    "relationshipMysterious",
+    relationshipMysterious
+);
+
+localStorage.setItem(
+    "trustMysterious",
+    trustMysterious
+);
+
+localStorage.setItem(
+    "storyFlags",
+    JSON.stringify(storyFlags)
+);
+    
     chapter.dialogues = chapter.dialogues.slice(
         0,
         dialogueIndex + 1
