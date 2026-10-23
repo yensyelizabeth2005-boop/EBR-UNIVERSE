@@ -1358,8 +1358,6 @@ const characterImage =
     characterExpressions.elizabeth[expression] ||
     characterExpressions.elizabeth.neutral;
 
-}
-        
         const elizabethActive =
             dialogue.character === "elizabeth"
                 ? "active-character"
