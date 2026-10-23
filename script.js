@@ -1353,12 +1353,11 @@ if (chapterNumber === 2 && lastChoice) {
         const dialogue = chapter.dialogues[dialogueIndex];
          const expression = dialogue.expression || "neutral";
 
-let characterImage = "";
 
-if (dialogue.character === "elizabeth") {
-    characterImage =
-        characterExpressions.elizabeth[expression] ||
-        characterExpressions.elizabeth.neutral;
+const characterImage =
+    characterExpressions.elizabeth[expression] ||
+    characterExpressions.elizabeth.neutral;
+
 }
         
         const elizabethActive =
