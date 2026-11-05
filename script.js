@@ -1499,7 +1499,11 @@ console.log("EBR TEST:", characterImage);
                 </div>
          
             </main>
-                    const scene = document.querySelector(".visual-novel");
+                    
+        `;
+    }
+  
+   const scene = document.querySelector(".visual-novel");
 
         scene.addEventListener("click", function(event) {
             // No avanzar al tocar botones ni controles.
@@ -1522,10 +1526,7 @@ console.log("EBR TEST:", characterImage);
                 openStory("first-story");
             }
         });
-        `;
-    }
-  
-   
+    
 window.makeChoice = function(action) {
     const choiceRoutes = {
         follow: {
