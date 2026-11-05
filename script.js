@@ -1094,6 +1094,7 @@ function openStory(storyId) {
 }
 
 function openChapter(chapterNumber) {
+    alert("OPEN CHAPTER: " + chapterNumber);
 
     if (chapterNumber < 1 || chapterNumber > 5) {
         alert("Chapter not found.");
