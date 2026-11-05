@@ -1476,39 +1476,10 @@ console.log("EBR TEST:", characterImage);
            : ""
        }
                     <div class="dialogue-controls">
-
-                        <button
-                            onclick="showStoriesCatalog()">
-                            MENU
-                        </button>
-
-                        ${
-                            !dialogue.choice && dialogueIndex < chapter.dialogues.length - 1
-                            ? `
-                                <button
-                                    class="next-button"
-                                    onclick="nextDialogue()">
-                                    NEXT →
-                                </button>
-                            `
-                            : chapterNumber < 5
-                            ? `
-                                <button
-                                    class="next-button"
-                                    onclick="openChapter(${chapterNumber + 1})">
-                                    NEXT CHAPTER →
-                                </button>
-                            `
-                            : `
-                                <button
-                                    class="next-button"
-                                    onclick="openStory('first-story')">
-                                    CHAPTERS
-                                </button>
-                            `
-                        }
-
-                    </div>
+    <button onclick="showStoriesCatalog()">
+        MENU
+    </button>
+</div>
 
                 </section>
 
@@ -1526,8 +1497,31 @@ console.log("EBR TEST:", characterImage);
                     </div>
 
                 </div>
-
+         
             </main>
+                    const scene = document.querySelector(".visual-novel");
+
+        scene.addEventListener("click", function(event) {
+            // No avanzar al tocar botones ni controles.
+            if (event.target.closest(
+                "button, .choice-container, input, textarea, a"
+            )) {
+                return;
+            }
+
+            // Las decisiones requieren una elección explícita.
+            if (dialogue.choice) {
+                return;
+            }
+
+            if (dialogueIndex < chapter.dialogues.length - 1) {
+                nextDialogue();
+            } else if (chapterNumber < 5) {
+                openChapter(chapterNumber + 1);
+            } else {
+                openStory("first-story");
+            }
+        });
         `;
     }
   
